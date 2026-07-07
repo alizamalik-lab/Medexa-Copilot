@@ -6,7 +6,7 @@
   <title>Medexa — PT/OT/SLP Clinical Assistant</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/src/style.css" />
 </head>
 <body>
@@ -19,21 +19,15 @@
   <div id="app">
     <header class="app-header">
       <div class="brand">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 32 32" width="20" height="20">
-            <path d="M4 24 A14 14 0 0 1 28 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-            <circle cx="16" cy="24" r="2.5" fill="currentColor"/>
-          </svg>
-        </span>
         <div class="brand-text">
-          <span class="brand-name">Medexa</span>
+          <span class="brand-name">Medexa Copilot</span>
           <span class="brand-tag">PT · OT · SLP</span>
         </div>
       </div>
       <button id="clear-chat-btn" class="btn-ghost" type="button">
         <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
           <path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m2 0v14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
+        </svg>  
         Clear chat
       </button>
     </header>
@@ -41,18 +35,18 @@
     <main id="chat-container" aria-live="polite">
       <div class="chat-inner">
         <section id="welcome-screen">
+          <div class="welcome-title">Medexa</div>
           <div class="welcome-badge">US clinical coding assistant</div>
-          <h1>What do you want to know today?</h1>
-          <p class="welcome-sub">CPT &amp; ICD-10 pairings, MUE limits, PTP edits, and PT/OT/SLP clinical guidance — grounded in your knowledge base.</p>
+          <h1>Your go-to assistant for PT, OT, and SLP queries.</h1>
           <div class="starter-chips">
             <button class="chip" data-prompt="What is CPT 97110?">
               <span class="chip-icon chip-icon-blue" aria-hidden="true">Exercise</span>
-              <span class="chip-label">What is therapeutic exercise?</span>
+              <span class="chip-label">What is a therapeutic exercise?</span>
               <span class="chip-hint">Learn about a common PT treatment</span>
             </button>
             <button class="chip" data-prompt="Are there any MUE limits for CPT 97140?">
               <span class="chip-icon chip-icon-amber" aria-hidden="true">Limits</span>
-              <span class="chip-label">How many manual therapy units per visit?</span>
+              <span class="chip-label">How many manual therapy units per visit can i bill?</span>
               <span class="chip-hint">Medicare unit caps explained</span>
             </button>
             <button class="chip" data-prompt="What ICD-10 codes pair with CPT 92507?">
@@ -79,7 +73,7 @@
             <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 19V5m0 0-6 6m6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
         </div>
-        <p class="input-footnote">Medexa provides coding guidance — not patient-specific diagnosis or treatment plans.</p>
+        <p class="input-footnote">Medexa provides coding guidance and patient-specific diagnosis/treatment plans. Output should still be reviewed by a professional.</p>
       </div>
     </form>
   </div>

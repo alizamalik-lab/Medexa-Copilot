@@ -26,8 +26,8 @@ export function appendAIMessage() {
 
   const avatar = document.createElement('span');
   avatar.className = 'ai-avatar';
-  avatar.innerHTML =
-    '<svg viewBox="0 0 32 32" width="18" height="18"><path d="M4 24 A14 14 0 0 1 28 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><circle cx="16" cy="24" r="2" fill="currentColor"/></svg>';
+  avatar.setAttribute('aria-hidden', 'true');
+  avatar.textContent = 'M';
 
   const content = document.createElement('div');
   content.className = 'message-content';
@@ -52,9 +52,7 @@ export function showTypingIndicator() {
   typingEl = document.createElement('div');
   typingEl.className = 'typing-indicator';
   typingEl.innerHTML = `
-    <span class="ai-avatar" aria-hidden="true">
-      <svg viewBox="0 0 32 32" width="18" height="18"><path d="M4 24 A14 14 0 0 1 28 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><circle cx="16" cy="24" r="2" fill="currentColor"/></svg>
-    </span>
+    <span class="ai-avatar" aria-hidden="true">M</span>
     <div class="typing-bubble">
       <svg viewBox="0 0 60 24" width="52" height="20" class="rom-sweep" aria-hidden="true">
         <path class="arc arc-1" d="M4 20 A10 10 0 0 1 20 12" fill="none" stroke-width="2.5" stroke-linecap="round"/>
