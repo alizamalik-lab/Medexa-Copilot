@@ -1,0 +1,26 @@
+{
+  "name": "medexa-chatbot",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start:backend": "node server/index.js",
+    "start:frontend": "vite",
+    "dev": "concurrently -n backend,frontend -c blue,green \"npm run start:backend\" \"npm run start:frontend\"",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "node server/index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "marked": "^18.0.5",
+    "openai": "^6.45.0",
+    "pdf-parse": "1.1.1"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "vite": "^5.4.0"
+  }
+}

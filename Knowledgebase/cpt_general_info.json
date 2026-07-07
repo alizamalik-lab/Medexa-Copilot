@@ -1,0 +1,547 @@
+[
+    {
+        "cpt_code": "90901",
+        "description": "Biofeedback train any meth",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "90912",
+        "description": "Bfb training 1st 15 min",
+        "isTimed": true
+    },
+    {
+        "cpt_code": "90913",
+        "description": "Bfb training ea addl 15 min",
+        "isTimed": true
+    },
+    {
+        "cpt_code": "92507",
+        "description": "Treatment of speech, language, voice, communication, and/or auditory processing disorder; individual",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92508",
+        "description": "Treatment of speech, language, voice, communication, and/or auditory processing disorder; group, 2 or more individuals",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92520",
+        "description": "Laryngeal function studies",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92521",
+        "description": "Evaluation of speech fluency (e.g., stuttering, cluttering)",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92522",
+        "description": "Evaluation of speech sound production (e.g., articulation, phonological process, apraxia, dysarthria)",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92523",
+        "description": "Evaluation of speech sound production; with evaluation of language comprehension and expression",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92524",
+        "description": "Behavioral and qualitative analysis of voice and resonance",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92526",
+        "description": "Treatment of swallowing dysfunction and/or oral function for feeding",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92597",
+        "description": "Oral speech device eval",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92607",
+        "description": "Ex for speech device rx 1hr",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92608",
+        "description": "Ex for speech device rx addl",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92609",
+        "description": "Use of speech device service",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92610",
+        "description": "Evaluate swallowing function",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92611",
+        "description": "Motion fluoroscopy/swallow",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92612",
+        "description": "Endoscopy swallow (fees) vid",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92614",
+        "description": "Laryngoscopic sensory vid",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92616",
+        "description": "Fees w/laryngeal sense test",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "93797",
+        "description": "Phys/qhp op car rhab wo ecg",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "93798",
+        "description": "Phys/qhp op car rhab w/ecg",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "95851",
+        "description": "Range of motion measurements",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "95852",
+        "description": "Range of motion measurements",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "95992",
+        "description": "Canalith repositioning proc",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "96000",
+        "description": "Motion analysis video/3d",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "96001",
+        "description": "Motion test w/ft press meas",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "96002",
+        "description": "Dynamic surface emg",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "96105",
+        "description": "Assessment of aphasia",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "96125",
+        "description": "Cognitive test by hc pro",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97010",
+        "description": "Application of a modality to 1 or more areas; hot or cold packs",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97012",
+        "description": "Application of a modality to 1 or more areas; traction, mechanical",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97016",
+        "description": "Application of a modality to 1 or more areas; vasopneumatic devices",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97018",
+        "description": "Application of a modality to 1 or more areas; paraffin bath",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97022",
+        "description": "Application of a modality to 1 or more areas; whirlpool",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97024",
+        "description": "Application of a modality to 1 or more areas; diathermy (e.g., microwave)",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97026",
+        "description": "Application of a modality to 1 or more areas; infrared",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97028",
+        "description": "Application of a modality to 1 or more areas; ultraviolet",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97032",
+        "description": "Application of a modality to 1 or more areas; electrical stimulation (manual), each 15 minutes",
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97033",
+        "description": "Application of a modality to 1 or more areas; iontophoresis, each 15 minutes",
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97034",
+        "description": "Application of a modality to 1 or more areas; contrast baths, each 15 minutes",
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97035",
+        "description": "Application of a modality to 1 or more areas; ultrasound, each 15 minutes",
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97036",
+        "description": "Application of a modality to 1 or more areas; Hubbard tank, each 15 minutes",
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97039",
+        "description": "Unlisted modality (specify type and time if constant attendance)",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97110",
+        "description": "Therapeutic procedure, 1 or more areas, each 15 minutes; therapeutic exercises to develop strength and endurance, range of motion and flexibility",
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97112",
+        "description": "Therapeutic procedure, 1 or more areas, each 15 minutes; neuromuscular reeducation of movement, balance, coordination, kinesthetic sense, posture, and/or proprioception for sitting and/or standing activities",
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97113",
+        "description": "Therapeutic procedure, 1 or more areas, each 15 minutes; aquatic therapy with therapeutic exercises",
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97116",
+        "description": "Therapeutic procedure, 1 or more areas, each 15 minutes; gait training (includes stair climbing)",
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97124",
+        "description": "Massage therapy",
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97129",
+        "description": "Therapeutic interventions that focus on cognitive function, first 15 minutes",
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97130",
+        "description": "Therapeutic interventions that focus on cognitive function, each additional 15 minutes",
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97139",
+        "description": "Unlisted therapeutic px",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97140",
+        "description": "Manual therapy techniques (e.g., mobilization/ manipulation, manual lymphatic drainage, manual traction), 1 or more regions, each 15 minutes",
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97150",
+        "description": "Therapeutic procedure(s), group (2 or more individuals)",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97161",
+        "description": "Physical therapy evaluation: low complexity, typically 20 minutes",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97162",
+        "description": "Physical therapy evaluation: moderate complexity, typically 30 minutes",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97163",
+        "description": "Physical therapy evaluation: high complexity, typically 45 minutes",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97164",
+        "description": "Re-evaluation of physical therapy established plan of care, typically 20 minutes",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97165",
+        "description": "Occupational therapy evaluation, low complexity, typically 30 minutes",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97166",
+        "description": "Occupational therapy evaluation, moderate complexity, typically 45 minutes",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97167",
+        "description": "Occupational therapy evaluation, high complexity, typically 60 minutes",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97168",
+        "description": "Re-evaluation of occupational therapy established plan of care, typically 30 minutes",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97530",
+        "description": "Therapeutic activities, direct (one-on-one) patient contact (use of dynamic activities to improve functional performance), each 15 minutes",
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97533",
+        "description": "Sensory integrative techniques to enhance sensory processing and promote adaptive responses to environmental demands, direct (one-on-one) patient contact, each 15 minutes",
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97535",
+        "description": "Self-care/home management training, direct one-on-one contact, each 15 minutes",
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97537",
+        "description": "Community/work reintegration training, direct one-on-one contact, each 15 minutes",
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97542",
+        "description": "Wheelchair management (e.g., assessment, fitting, training), each 15 minutes",
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97545",
+        "description": "Work hardening/conditioning; initial 2 hours",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97546",
+        "description": "Work hardening/conditioning; each additional hour (List separately in addition to code for primary procedure)",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97550",
+        "description": "Caregiver traing 1st 30 min",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97551",
+        "description": "Caregiver traing ea addl 15",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97552",
+        "description": "Group caregiver training",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97597",
+        "description": "Debridement (eg, high pressure waterjet with/without suction, sharp selective debridement with scissors, scalpel and forceps), open wound, including topical application(s), wound assessment, use of a whirlpool, when performed and instruction(s) for ongoing care, per session, total wound(s) surface area; first 20 sq cm or less",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97598",
+        "description": "Debridement open wound, each additional 20 sq cm",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97602",
+        "description": "Removal of devitalized tissue from wound(s), non-selective debridement, without anesthesia",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97605",
+        "description": "Negative pressure wound therapy (eg, vacuum assisted drainage collection), utilizing durable medical equipment (DME), including topical application(s), wound assessment, and instruction(s) for ongoing care, per session; total wound(s) surface area less than or equal to 50 square centimeters",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97606",
+        "description": "Negative pressure wound therapy (eg, vacuum assisted drainage collection), utilizing durable medical equipment (DME), including topical application(s), wound assessment, and instruction(s) for ongoing care, per session; total wound(s) surface area greater than 50 square centimeters",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97607",
+        "description": "Negative pressure wound therapy (eg, vacuum assisted drainage collection), utilizing non-durable medical equipment, including topical application(s), wound assessment, and instruction(s) for ongoing care, per session; total wound(s) surface area less than or equal to 50 square centimeters",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97608",
+        "description": "Negative pressure wound therapy (eg, vacuum assisted drainage collection), utilizing non-durable medical equipment, including topical application(s), wound assessment, and instruction(s) for ongoing care, per session; total wound(s) surface area greater than 50 square centimeters",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97610",
+        "description": "Low frequency non-thermal us",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97750",
+        "description": "Physical performance test or measurement, with written report, each 15 minutes",
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97755",
+        "description": "Assistive technology assessment, direct one-on-one contact, with written report, each 15 minutes",
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97760",
+        "description": "Orthotic(s) management and training, upper extremity(ies), lower extremity(ies) and/or trunk, each 15 minutes",
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97761",
+        "description": "Prosthetic training, upper and/or lower extremity(ies), each 15 minutes",
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97763",
+        "description": "Orthotic(s)/prosthetic(s) management and/or training, subsequent encounter, each 15 minutes",
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97799",
+        "description": "Unlisted physical medicine/rehabilitation service or procedure",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98966",
+        "description": "Ph1 assmt&mgmt nqhp 5-10",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98967",
+        "description": "Ph1 assmt&mgmt nqhp 11-20",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98968",
+        "description": "Ph1 assmt&mgmt nqhp 21-30",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98970",
+        "description": "Nqhp ol dig assmt&mgmt 5-10",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98971",
+        "description": "Nqhp ol dig assmt&mgmt 11-20",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98972",
+        "description": "Nqhp ol dig assmt&mgmt 21+",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98975",
+        "description": "Rtm 1st set-up&pt educaj eqp",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98976",
+        "description": "Rtm dev sply resp sys 16-30d",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98977",
+        "description": "Rtm dev sply mscskl 16-30 d",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98979",
+        "description": "Rtm tx mgmt 1st 10 min",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98980",
+        "description": "Rtm tx mgmt 1st 20 min",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98981",
+        "description": "Rtm tx mgmt ea addl 20 min",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98984",
+        "description": "Rtm dev sply resp sys 2-15 d",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98985",
+        "description": "Rtm dev sply mscsk sys 2-15d",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "G0281",
+        "description": "Elec stim unattend for press",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "G0283",
+        "description": "Elec stim other than wound",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "G0329",
+        "description": "Electromagntic tx for ulcers",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "G0451",
+        "description": "Devlopment test interpt&rep",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "G0541",
+        "description": "No pt prsnt train initial 30",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "G0542",
+        "description": "No pt prsnt train add 15",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "G0543",
+        "description": "Group train w/o patient",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "G2250",
+        "description": "Remot img sub by pt, non e/m",
+        "isTimed": false
+    },
+    {
+        "cpt_code": "G2251",
+        "description": "Brief chkin, 5-10, non-e/m",
+        "isTimed": false
+    }
+]

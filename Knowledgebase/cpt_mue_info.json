@@ -1,0 +1,1092 @@
+[
+    {
+        "cpt_code": "90901",
+        "mue": {
+            "limit": 1,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Nature of Service/Procedure"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "90912",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": true
+    },
+    {
+        "cpt_code": "90913",
+        "mue": {
+            "limit": 3,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: CMS Workgroup"
+        },
+        "isTimed": true
+    },
+    {
+        "cpt_code": "92507",
+        "mue": {
+            "limit": 1,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Nature of Service/Procedure"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92508",
+        "mue": {
+            "limit": 1,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Nature of Service/Procedure"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92520",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Anatomic Consideration"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92521",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92522",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92523",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92524",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92526",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Anatomic Consideration"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92597",
+        "mue": {
+            "limit": 1,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Nature of Service/Procedure"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92607",
+        "mue": {
+            "limit": 1,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Nature of Service/Procedure"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92608",
+        "mue": {
+            "limit": 4,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92609",
+        "mue": {
+            "limit": 1,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Nature of Service/Procedure"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92610",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Anatomic Consideration"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92611",
+        "mue": {
+            "limit": 1,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Nature of Service/Procedure"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92612",
+        "mue": {
+            "limit": 1,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Nature of Service/Procedure"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92614",
+        "mue": {
+            "limit": 1,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Nature of Service/Procedure"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92616",
+        "mue": {
+            "limit": 1,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Nature of Service/Procedure"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "93797",
+        "mue": {
+            "limit": 2,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "CMS Policy"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "93798",
+        "mue": {
+            "limit": 2,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "CMS Policy"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "95851",
+        "mue": {
+            "limit": 3,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "95852",
+        "mue": {
+            "limit": 1,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "95992",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "96000",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "96001",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "96002",
+        "mue": {
+            "limit": 1,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Nature of Service/Procedure"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "96105",
+        "mue": {
+            "limit": 3,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "96125",
+        "mue": {
+            "limit": 2,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97010",
+        "mue": {
+            "limit": 0,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "CMS Policy"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97012",
+        "mue": {
+            "limit": 1,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97016",
+        "mue": {
+            "limit": 1,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97018",
+        "mue": {
+            "limit": 1,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97022",
+        "mue": {
+            "limit": 1,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97024",
+        "mue": {
+            "limit": 1,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97026",
+        "mue": {
+            "limit": 1,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97028",
+        "mue": {
+            "limit": 1,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97032",
+        "mue": {
+            "limit": 4,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97033",
+        "mue": {
+            "limit": 4,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97034",
+        "mue": {
+            "limit": 2,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97035",
+        "mue": {
+            "limit": 2,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97036",
+        "mue": {
+            "limit": 3,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97039",
+        "mue": {
+            "limit": 1,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97110",
+        "mue": {
+            "limit": 6,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97112",
+        "mue": {
+            "limit": 4,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97113",
+        "mue": {
+            "limit": 6,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97116",
+        "mue": {
+            "limit": 4,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97124",
+        "mue": {
+            "limit": 4,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97129",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97130",
+        "mue": {
+            "limit": 7,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97139",
+        "mue": {
+            "limit": 1,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: CMS Workgroup"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97140",
+        "mue": {
+            "limit": 6,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97150",
+        "mue": {
+            "limit": 1,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97161",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "CMS Policy"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97162",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "CMS Policy"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97163",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "CMS Policy"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97164",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "CMS Policy"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97165",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "CMS Policy"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97166",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "CMS Policy"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97167",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "CMS Policy"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97168",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "CMS Policy"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97530",
+        "mue": {
+            "limit": 6,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97533",
+        "mue": {
+            "limit": 4,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97535",
+        "mue": {
+            "limit": 8,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97537",
+        "mue": {
+            "limit": 6,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97542",
+        "mue": {
+            "limit": 8,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97545",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97546",
+        "mue": {
+            "limit": 2,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97550",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97551",
+        "mue": {
+            "limit": 2,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Nature of Service/Procedure"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97552",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97597",
+        "mue": {
+            "limit": 1,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Nature of Service/Procedure"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97598",
+        "mue": {
+            "limit": 8,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Nature of Service/Procedure"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97602",
+        "mue": {
+            "limit": 0,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "CMS Policy"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97605",
+        "mue": {
+            "limit": 1,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Nature of Service/Procedure"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97606",
+        "mue": {
+            "limit": 1,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Nature of Service/Procedure"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97607",
+        "mue": {
+            "limit": 1,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Nature of Service/Procedure"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97608",
+        "mue": {
+            "limit": 1,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Nature of Service/Procedure"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97610",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97750",
+        "mue": {
+            "limit": 8,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97755",
+        "mue": {
+            "limit": 8,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97760",
+        "mue": {
+            "limit": 6,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97761",
+        "mue": {
+            "limit": 6,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97763",
+        "mue": {
+            "limit": 6,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97799",
+        "mue": {
+            "limit": 1,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98966",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98967",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98968",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98970",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98971",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98972",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98975",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98976",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98977",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98979",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98980",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98981",
+        "mue": {
+            "limit": 3,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Nature of Service/Procedure"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98984",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98985",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "G0281",
+        "mue": {
+            "limit": 1,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "G0283",
+        "mue": {
+            "limit": 1,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "G0329",
+        "mue": {
+            "limit": 1,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "G0451",
+        "mue": {
+            "limit": 1,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Clinical: Data"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "G0541",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "G0542",
+        "mue": {
+            "limit": 2,
+            "adjudication": 3,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "G0543",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "G2250",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    },
+    {
+        "cpt_code": "G2251",
+        "mue": {
+            "limit": 1,
+            "adjudication": 2,
+            "adjudication_level": "date-of-service",
+            "description": "Code Descriptor / CPT Instruction"
+        },
+        "isTimed": false
+    }
+]

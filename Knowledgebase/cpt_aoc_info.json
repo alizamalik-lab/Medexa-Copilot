@@ -1,0 +1,809 @@
+[
+    {
+        "cpt_code": "90901",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [
+            "90912"
+        ],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "90912",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [
+            "90913"
+        ],
+        "isTimed": true
+    },
+    {
+        "cpt_code": "90913",
+        "isAddonCode": true,
+        "parentCode": "90912",
+        "addonCodesAllowed": [],
+        "isTimed": true
+    },
+    {
+        "cpt_code": "92507",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [
+            "0770T"
+        ],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92508",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [
+            "0770T"
+        ],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92520",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92521",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92522",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92523",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92524",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92526",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92597",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92607",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92608",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92609",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92610",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92611",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92612",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92614",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "92616",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "93797",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "93798",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "95851",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "95852",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "95992",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "96000",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "96001",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "96002",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "96105",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "96125",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97010",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97012",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97016",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97018",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97022",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97024",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97026",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97028",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97032",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97033",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97034",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97035",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97036",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97039",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97110",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [
+            "0770T"
+        ],
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97112",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [
+            "0770T"
+        ],
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97113",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97116",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [
+            "0791T"
+        ],
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97124",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97129",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [
+            "0770T",
+            "97130"
+        ],
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97130",
+        "isAddonCode": true,
+        "parentCode": "97129",
+        "addonCodesAllowed": [],
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97139",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97140",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97150",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [
+            "0770T"
+        ],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97161",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97162",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97163",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97164",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97165",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97166",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97167",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97168",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97530",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [
+            "0770T"
+        ],
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97533",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [
+            "0770T"
+        ],
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97535",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [
+            "0770T"
+        ],
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97537",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [
+            "0770T"
+        ],
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97542",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97545",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [
+            "97546"
+        ],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97546",
+        "isAddonCode": true,
+        "parentCode": "97545",
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97550",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [
+            "97551"
+        ],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97551",
+        "isAddonCode": true,
+        "parentCode": "97550",
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97552",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97597",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [
+            "97598"
+        ],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97598",
+        "isAddonCode": true,
+        "parentCode": "97597",
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97602",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97605",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97606",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97607",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97608",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97610",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "97750",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97755",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97760",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97761",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97763",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": true
+    },
+    {
+        "cpt_code": "97799",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98966",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98967",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98968",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98970",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98971",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98972",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98975",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [
+            "98976",
+            "98977",
+            "98984",
+            "98985"
+        ],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98976",
+        "isAddonCode": true,
+        "parentCode": "98975",
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98977",
+        "isAddonCode": true,
+        "parentCode": "98975",
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98979",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [
+            "98980"
+        ],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98980",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [
+            "98981"
+        ],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98981",
+        "isAddonCode": true,
+        "parentCode": "98980",
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98984",
+        "isAddonCode": true,
+        "parentCode": "98975",
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "98985",
+        "isAddonCode": true,
+        "parentCode": "98975",
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "G0281",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "G0283",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "G0329",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "G0451",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "G0541",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [
+            "G0542"
+        ],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "G0542",
+        "isAddonCode": true,
+        "parentCode": "G0541",
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "G0543",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "G2250",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    },
+    {
+        "cpt_code": "G2251",
+        "isAddonCode": false,
+        "parentCode": null,
+        "addonCodesAllowed": [],
+        "isTimed": false
+    }
+]
