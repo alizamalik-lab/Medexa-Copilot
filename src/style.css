@@ -1,10 +1,10 @@
 :root {
-  --color-bg: #ffffff;
-  --color-bg-mid: #ffffff;
-  --color-bg-light: #ffffff;
-  --color-surface: rgba(255, 255, 255, 0.95);
-  --color-surface-solid: #ffffff;
-  --color-ai-bubble: #f4f6f9;
+  --color-bg: #c9d7eb;
+  --color-bg-mid: #d5e0f0;
+  --color-bg-light: #e2eaf6;
+  --color-surface: rgba(241, 246, 255, 0.9);
+  --color-surface-solid: #edf3fb;
+  --color-ai-bubble: rgba(231, 239, 251, 0.98);
   --color-ink: #0b1730;
   --color-ink-soft: #3d4d68;
   --color-ink-muted: #697992;
@@ -47,7 +47,7 @@ html, body {
 }
 
 body {
-  background: #ffffff;
+  background: linear-gradient(165deg, var(--color-bg) 0%, var(--color-bg-mid) 45%, var(--color-bg-light) 100%);
   color: var(--color-ink);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
@@ -62,9 +62,9 @@ body {
   overflow: hidden;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 80% 60% at 10% 0%, rgba(53, 100, 198, 0.06) 0%, transparent 55%),
-    radial-gradient(ellipse 70% 50% at 90% 100%, rgba(22, 61, 143, 0.05) 0%, transparent 50%),
-    radial-gradient(ellipse 50% 40% at 50% 50%, rgba(99, 136, 216, 0.04) 0%, transparent 60%);
+    radial-gradient(ellipse 80% 60% at 10% 0%, rgba(53, 100, 198, 0.14) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 50% at 90% 100%, rgba(22, 61, 143, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 40% at 50% 50%, rgba(99, 136, 216, 0.08) 0%, transparent 60%);
 }
 
 .orb {
@@ -233,11 +233,14 @@ body {
 .welcome-title {
   font-family: var(--font-body);
   font-size: clamp(3rem, 8vw, 4.6rem);
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: -0.06em;
   line-height: 0.95;
-  color: var(--color-blue-dark);
   margin: 0;
+  background: linear-gradient(135deg, var(--color-blue-dark) 0%, var(--color-blue-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 #welcome-screen h1 {
@@ -245,9 +248,12 @@ body {
   font-weight: 500;
   font-size: clamp(1.2rem, 3vw, 1.8rem);
   margin: 0;
-  color: #5a677e;
   letter-spacing: -0.02em;
   line-height: 1.15;
+  background: linear-gradient(135deg, var(--color-ink) 30%, var(--color-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .welcome-sub {
