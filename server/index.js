@@ -45,8 +45,8 @@ if (fs.existsSync(DIST_DIR)) {
   });
 }
 
-app.listen(PORT, () => {
-  console.log(`[Medexa] Server listening on http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`[Medexa] Server listening on http://0.0.0.0:${PORT}`);
   if (isRagConfigured()) {
     console.log(`[Medexa] RAG_URL=${getRagUrl()}`);
   } else {

@@ -1,8 +1,8 @@
-# Hugging Face Docker Space: Express (UI + proxy) + Python RAG in one container.
-# Browser → :7860 (Express) → http://127.0.0.1:8000 (RAG)
+# Medexa: Express (UI + proxy) + Python RAG in one container.
+# Browser → $PORT (Express) → http://127.0.0.1:8000 (RAG)
 #
-# RAG layout expected at: chatbot/app, chatbot/rag, chatbot/data, ...
-# Required Space secret: GROQ_API_KEY
+# Works on Render, Hugging Face Spaces, and similar Docker hosts.
+# Required secret: GROQ_API_KEY
 
 FROM node:20-bookworm
 
@@ -25,34 +25,36 @@ COPY src ./src
 COPY server ./server
 RUN npm run build && npm prune --omit=dev
 
-# --- RAG app + data (flat chatbot/) ---
-COPY chatbot/app ./chatbot/app
-COPY chatbot/rag ./chatbot/rag
-COPY chatbot/data ./chatbot/data
-COPY chatbot/requirements.txt ./chatbot/requirements.txt
-COPY chatbot/chroma_db ./chatbot/chroma_db
+# --- RAG app + data ---
+COPY chatbot/chatbot/app ./chatbot/chatbot/app
+COPY chatbot/chatbot/rag ./chatbot/chatbot/rag
+COPY chatbot/chatbot/data ./chatbot/chatbot/data
+COPY chatbot/chatbot/requirements.txt ./chatbot/chatbot/requirements.txt
 
 RUN python3 -m venv /opt/venv \
     && /opt/venv/bin/pip install --no-cache-dir --upgrade pip \
-    && /opt/venv/bin/pip install --no-cache-dir -r chatbot/requirements.txt
+    && /opt/venv/bin/pip install --no-cache-dir -r chatbot/chatbot/requirements.txt
 
-COPY scripts/start-hf.sh /app/scripts/start-hf.sh
-RUN chmod +x /app/scripts/start-hf.sh \
-    && sed -i 's/\r$//' /app/scripts/start-hf.sh
+# Pre-build the vector index so cold starts are fast (no indexing at runtime).
+ENV DATA_DIR=./data
+ENV CHROMA_PERSIST_DIR=./chroma_db
+RUN cd /app/chatbot/chatbot \
+    && /opt/venv/bin/python -c "from rag.indexer import DocumentIndexer; DocumentIndexer().index()"
+
+COPY scripts/start.sh /app/scripts/start.sh
+RUN chmod +x /app/scripts/start.sh \
+    && sed -i 's/\r$//' /app/scripts/start.sh
 
 ENV PATH="/opt/venv/bin:$PATH"
 ENV NODE_ENV=production
-ENV PORT=7860
 ENV RAG_URL=http://127.0.0.1:8000
 ENV RAG_CHAT_PATH=/chat
-ENV RAG_DIR=/app/chatbot
+ENV RAG_DIR=/app/chatbot/chatbot
 ENV LLM_PROVIDER=groq
-ENV DATA_DIR=./data
-ENV CHROMA_PERSIST_DIR=./chroma_db
 
-EXPOSE 7860
+EXPOSE 10000
 
-HEALTHCHECK --interval=30s --timeout=10s --start-period=600s --retries=10 \
-  CMD curl -fsS http://127.0.0.1:7860/api/health || exit 1
+HEALTHCHECK --interval=30s --timeout=15s --start-period=300s --retries=5 \
+  CMD sh -c 'curl -fsS "http://127.0.0.1:${PORT:-10000}/api/health" || exit 1'
 
-CMD ["/app/scripts/start-hf.sh"]
+CMD ["/app/scripts/start.sh"]
