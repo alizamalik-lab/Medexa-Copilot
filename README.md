@@ -93,24 +93,28 @@ Optional Space variables:
 
 ### What must be in the Space repo
 
-Upload/push the Medexa app **including** RAG app code and data under flat `chatbot/`:
+Push the full repo (or connect GitHub). The Dockerfile expects:
 
 - `server/`, `src/`, `index.html`, `package.json`, `Dockerfile`, `scripts/start-hf.sh`
-- `chatbot/app/`, `chatbot/rag/`, `chatbot/data/`, `chatbot/requirements.txt`
-- Prefer also `chatbot/chroma_db/` (faster first boot)
+- `chatbot/chatbot/app/`, `chatbot/chatbot/rag/`, `chatbot/chatbot/data/`, `chatbot/chatbot/requirements.txt`
+
+The vector index is built **during the Docker image build** (no need to commit `chroma_db/`).
 
 Do **not** upload `.venv/`, `.env`, or `node_modules/`.
 
-Space tree for RAG:
+### Create the Space (one-time)
 
-```text
-chatbot/
-  app/
-  rag/
-  data/
-  requirements.txt
-  chroma_db/   (optional)
-```
+1. Go to [huggingface.co/new-space](https://huggingface.co/new-space)
+2. **Space name:** e.g. `medexa-copilot`
+3. **SDK:** Docker
+4. **Hardware:** CPU basic (free) or **CPU upgrade** if builds fail on memory
+5. Connect this GitHub repo, or push with:
+   ```bash
+   git remote add space https://huggingface.co/spaces/YOUR_USERNAME/medexa-copilot
+   git push space main
+   ```
+6. **Settings → Repository secrets:** add `GROQ_API_KEY`
+7. Wait for the Docker build (first build can take 15–30+ minutes)
 
 If you only upload the Node app without the RAG folders / new Dockerfile, Express will show:  
 `RAG_URL is not configured` (or RAG will be unreachable).

@@ -1,8 +1,7 @@
-# Medexa: Express (UI + proxy) + Python RAG in one container.
-# Browser → $PORT (Express) → http://127.0.0.1:8000 (RAG)
+# Hugging Face Docker Space: Express (UI + proxy) + Python RAG in one container.
+# Browser → :7860 (Express) → http://127.0.0.1:8000 (RAG)
 #
-# Works on Render, Hugging Face Spaces, and similar Docker hosts.
-# Required secret: GROQ_API_KEY
+# Required Space secret: GROQ_API_KEY
 
 FROM node:20-bookworm
 
@@ -35,26 +34,27 @@ RUN python3 -m venv /opt/venv \
     && /opt/venv/bin/pip install --no-cache-dir --upgrade pip \
     && /opt/venv/bin/pip install --no-cache-dir -r chatbot/chatbot/requirements.txt
 
-# Pre-build the vector index so cold starts are fast (no indexing at runtime).
+# Pre-build vector index during image build (chroma_db is not in git).
 ENV DATA_DIR=./data
 ENV CHROMA_PERSIST_DIR=./chroma_db
 RUN cd /app/chatbot/chatbot \
     && /opt/venv/bin/python -c "from rag.indexer import DocumentIndexer; DocumentIndexer().index()"
 
-COPY scripts/start.sh /app/scripts/start.sh
-RUN chmod +x /app/scripts/start.sh \
-    && sed -i 's/\r$//' /app/scripts/start.sh
+COPY scripts/start-hf.sh /app/scripts/start-hf.sh
+RUN chmod +x /app/scripts/start-hf.sh \
+    && sed -i 's/\r$//' /app/scripts/start-hf.sh
 
 ENV PATH="/opt/venv/bin:$PATH"
 ENV NODE_ENV=production
+ENV PORT=7860
 ENV RAG_URL=http://127.0.0.1:8000
 ENV RAG_CHAT_PATH=/chat
 ENV RAG_DIR=/app/chatbot/chatbot
 ENV LLM_PROVIDER=groq
 
-EXPOSE 10000
+EXPOSE 7860
 
-HEALTHCHECK --interval=30s --timeout=15s --start-period=300s --retries=5 \
-  CMD sh -c 'curl -fsS "http://127.0.0.1:${PORT:-10000}/api/health" || exit 1'
+HEALTHCHECK --interval=30s --timeout=15s --start-period=600s --retries=10 \
+  CMD curl -fsS http://127.0.0.1:7860/api/health || exit 1
 
-CMD ["/app/scripts/start.sh"]
+CMD ["/app/scripts/start-hf.sh"]
