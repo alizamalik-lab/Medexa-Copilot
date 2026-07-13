@@ -15,9 +15,7 @@
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "marked": "^18.0.5",
-    "openai": "^6.45.0",
-    "pdf-parse": "1.1.1"
+    "marked": "^18.0.5"
   },
   "devDependencies": {
     "concurrently": "^8.2.2",

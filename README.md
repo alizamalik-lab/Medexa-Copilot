@@ -13,58 +13,117 @@ pinned: false
 Medexa is a PT/OT/SLP-focused US clinical coding assistant built with:
 
 - Vite frontend
-- Express backend
-- Groq's OpenAI-compatible chat completions API
-- Local CPT / ICD-10 / MUE / PTP / AOC knowledge files
+- Express backend (UI + `/api/chat` proxy)
+- Separate Python **RAG** service (retrieve → prompt → LLM)
+- CPT / ICD-10 / MUE / PTP / AOC data owned by the RAG under `chatbot/`
 
-## Hugging Face Space Setup
+## Architecture
 
-This repo is configured for a **Docker Space**.
+```
+Browser → Express (:3001 / :7860) → RAG_URL (:8000) → Chroma + LLM
+```
 
-### Required secret
+Express no longer injects `Knowledgebase/` into prompts. All answering happens in the RAG process.
 
-Add this Space secret in Hugging Face:
+## Local development (two processes)
 
-- `GROQ_API_KEY`
+### 1. RAG service
 
-Optional variable:
-
-- `GROQ_MODEL` (defaults to `llama-3.1-8b-instant`)
-
-### Required local knowledge files
-
-This app expects these files under `Knowledgebase/`:
-
-- `cpt_general_info.json`
-- `cpt_aoc_info.json`
-- `cpt_mue_info.json`
-- `cpt_icd10_info.json`
-- `cpt_ptp_info.json`
-- optional text-searchable `.pdf` files
-
-Important: in this local repo, `Knowledgebase/*.json` and `Knowledgebase/*.pdf` are gitignored. For the Hugging Face Space to work, you must **upload those files into the Space repository** or otherwise make them available inside the container at build/runtime.
-
-### How it runs on Hugging Face
-
-- Docker builds the app
-- `npm run build` generates the frontend `dist/`
-- Express serves the built frontend and `/api/chat`
-- Hugging Face exposes the app on port `7860`
-
-## Local production-style run
+Stand-in (current nested app):
 
 ```bash
+cd chatbot/chatbot
+python -m venv .venv
+# activate venv, then:
+pip install -r requirements.txt
+# set GROQ_API_KEY in chatbot/chatbot/.env
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+```
+
+When the new RAG is ready, place it flat under `chatbot/` and run uvicorn from there instead. Keep the same HTTP contract (`POST /chat`, `DELETE /chat/{id}`, `GET /health`). See [chatbot/README.md](chatbot/README.md).
+
+### 2. Medexa UI + proxy
+
+```bash
+# repo root
+cp .env.example .env
+# ensure RAG_URL=http://localhost:8000
 npm install
+npm run dev
+```
+
+Or production-style:
+
+```bash
 npm run build
 npm start
 ```
 
-Then open:
+Open `http://localhost:5173` (dev) or `http://localhost:3001` (built).
 
-- `http://localhost:3001` locally
+### Env (Express)
+
+| Variable | Purpose |
+|----------|---------|
+| `PORT` | Express port (default `3001`) |
+| `RAG_URL` | Base URL of the RAG service (required for chat) |
+| `RAG_CHAT_PATH` | Chat path (default `/chat`) |
+| `RAG_TIMEOUT_MS` | Request timeout (default `60000`) |
+
+LLM API keys belong on the **RAG** service, not Express.
+
+## Hugging Face Space Setup
+
+This repo is configured for a **Docker Space**. The Dockerfile runs **both** processes in one container:
+
+- Express UI + `/api/chat` proxy on port **7860**
+- Python RAG (uvicorn) on **127.0.0.1:8000**
+- `RAG_URL=http://127.0.0.1:8000` is set inside the image (do not leave this unset)
+
+### Required Space secret
+
+In the Space **Settings → Secrets**:
+
+- `GROQ_API_KEY` — required for chat answers
+
+Optional Space variables:
+
+- `GROQ_MODEL` (e.g. `llama-3.3-70b-versatile`)
+- `LLM_PROVIDER` (default `groq`)
+
+### What must be in the Space repo
+
+Upload/push the Medexa app **including** RAG app code and data under flat `chatbot/`:
+
+- `server/`, `src/`, `index.html`, `package.json`, `Dockerfile`, `scripts/start-hf.sh`
+- `chatbot/app/`, `chatbot/rag/`, `chatbot/data/`, `chatbot/requirements.txt`
+- Prefer also `chatbot/chroma_db/` (faster first boot)
+
+Do **not** upload `.venv/`, `.env`, or `node_modules/`.
+
+Space tree for RAG:
+
+```text
+chatbot/
+  app/
+  rag/
+  data/
+  requirements.txt
+  chroma_db/   (optional)
+```
+
+If you only upload the Node app without the RAG folders / new Dockerfile, Express will show:  
+`RAG_URL is not configured` (or RAG will be unreachable).
+
+## Folder swap (new RAG)
+
+1. Stop the old RAG.
+2. Replace `chatbot/chatbot/` with the new RAG at `chatbot/`.
+3. Keep `RAG_URL` the same.
+4. Restart uvicorn from `chatbot/`.
+5. No Express rewrite required if the HTTP contract matches.
 
 ## Notes
 
-- The frontend and backend are bundled into one container for easier free hosting.
-- The large ICD-10 and PTP JSON files are indexed lazily on first relevant request.
-- The app will start without a PDF, but it will not answer chat requests without `GROQ_API_KEY`.
+- `/api/health` reports whether `RAG_URL` is set and whether `/health` on the RAG is reachable.
+- Clear chat clears the UI and best-effort `DELETE`s the RAG session.

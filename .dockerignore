@@ -1,7 +1,17 @@
 node_modules
 dist
 .env
+.env.*
+!.env.example
 .git
 .cursor
 terminals
 *.log
+**/__pycache__
+**/*.pyc
+**/.venv
+chatbot/.venv
+chatbot/**/.venv
+chatbot/**/.env
+Knowledgebase
+agent-transcripts

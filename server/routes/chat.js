@@ -1,34 +1,24 @@
 import { Router } from 'express';
-import OpenAI from 'openai';
-import { extractCptCodes, extractIcd10Codes, searchLargeFiles } from '../services/searchService.js';
-import { buildSystemPrompt } from '../services/promptBuilder.js';
+import { askRag, clearRagSession, isRagConfigured } from '../services/ragClient.js';
 
 const router = Router();
-const DEFAULT_MODEL = process.env.GROQ_MODEL || process.env.OPENAI_MODEL || 'llama-3.1-8b-instant';
-const API_KEY = process.env.GROQ_API_KEY || process.env.OPENAI_API_KEY;
 
-let openai = null;
-function getOpenAIClient() {
-  if (!openai) {
-    openai = new OpenAI({
-      apiKey: API_KEY,
-      baseURL: 'https://api.groq.com/openai/v1'
-    });
-  }
-  return openai;
-}
-
-const MAX_HISTORY_MESSAGES = 10;
+const sendEvent = (res, event, data) => {
+  res.write(`event: ${event}\n`);
+  res.write(`data: ${JSON.stringify(data)}\n\n`);
+};
 
 router.post('/', async (req, res) => {
-  const { message, history = [] } = req.body ?? {};
+  const { message, sessionId = null } = req.body ?? {};
 
   if (!message || typeof message !== 'string' || !message.trim()) {
     return res.status(400).json({ error: 'A non-empty "message" string is required.' });
   }
 
-  if (!API_KEY) {
-    return res.status(500).json({ error: 'Server is missing GROQ_API_KEY.' });
+  if (!isRagConfigured()) {
+    return res.status(503).json({
+      error: 'RAG_URL is not configured. Start the RAG service and set RAG_URL.'
+    });
   }
 
   res.setHeader('Content-Type', 'text/event-stream');
@@ -36,57 +26,36 @@ router.post('/', async (req, res) => {
   res.setHeader('Connection', 'keep-alive');
   res.flushHeaders?.();
 
-  const sendEvent = (event, data) => {
-    res.write(`event: ${event}\n`);
-    res.write(`data: ${JSON.stringify(data)}\n\n`);
-  };
-
-  let stream;
-
   try {
-    const trimmedHistory = history.slice(-MAX_HISTORY_MESSAGES);
-    const allTexts = [
-      message,
-      ...trimmedHistory.map((m) => m.content ?? '')
-    ];
-
-    const cptCodes = extractCptCodes(allTexts);
-    const icd10Codes = extractIcd10Codes(allTexts);
-    const dynamicContext = await searchLargeFiles(cptCodes, icd10Codes);
-    const systemPrompt = buildSystemPrompt({ cptCodes, dynamicContext });
-
-    const messages = trimmedHistory.map((m) => ({
-      role: m.role === 'user' ? 'user' : 'assistant',
-      content: m.content
-    }));
-
-    stream = await getOpenAIClient().chat.completions.create({
-      model: DEFAULT_MODEL,
-      stream: true,
-      temperature: 0.3,
-      messages: [
-        { role: 'system', content: systemPrompt },
-        ...messages,
-        { role: 'user', content: message }
-      ]
+    const result = await askRag({
+      question: message.trim(),
+      sessionId: typeof sessionId === 'string' && sessionId ? sessionId : null
     });
 
-    req.on('close', () => {
-      stream?.controller?.abort?.();
+    // RAG is non-streaming; emit one delta so the existing UI SSE client still works.
+    sendEvent(res, 'delta', { text: result.answer });
+    sendEvent(res, 'done', {
+      sessionId: result.sessionId,
+      sources: result.sources
     });
-
-    for await (const chunk of stream) {
-      const delta = chunk.choices?.[0]?.delta?.content;
-      if (delta) sendEvent('delta', { text: delta });
-    }
-
-    sendEvent('done', {});
     res.end();
   } catch (err) {
-    console.error('[chat route] Error:', err);
-    sendEvent('error', { message: 'Something went wrong generating a response.' });
+    console.error('[chat route] RAG error:', err.message);
+    sendEvent(res, 'error', {
+      message: err.message || 'RAG service unavailable.'
+    });
     res.end();
   }
+});
+
+router.delete('/session/:sessionId', async (req, res) => {
+  const { sessionId } = req.params;
+  if (!sessionId) {
+    return res.status(400).json({ error: 'sessionId is required.' });
+  }
+
+  const result = await clearRagSession(sessionId);
+  res.json({ status: 'ok', ...result });
 });
 
 export default router;

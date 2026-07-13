@@ -5,3 +5,8 @@ node_modules/
 dist/
 .DS_Store
 
+# Python RAG service
+**/.venv/
+**/__pycache__/
+**/*.pyc
+chatbot/chatbot/chroma_db/

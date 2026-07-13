@@ -1,8 +1,29 @@
 const HISTORY_LIMIT = 2;
 let history = [];
+let sessionId = null;
+
+function newSessionId() {
+  if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+    return crypto.randomUUID();
+  }
+  return `sess_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`;
+}
+
+function ensureSessionId() {
+  if (!sessionId) sessionId = newSessionId();
+  return sessionId;
+}
 
 export function resetHistory() {
   history = [];
+  const previous = sessionId;
+  sessionId = null;
+
+  if (previous) {
+    fetch(`/api/chat/session/${encodeURIComponent(previous)}`, {
+      method: 'DELETE'
+    }).catch(() => {});
+  }
 }
 
 export async function streamChat(message, { onDelta, onDone, onError } = {}) {
@@ -10,12 +31,18 @@ export async function streamChat(message, { onDelta, onDone, onError } = {}) {
   history.push({ role: 'user', content: message });
   history = history.slice(-HISTORY_LIMIT);
 
+  const currentSessionId = ensureSessionId();
+
   let response;
   try {
     response = await fetch('/api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message, history: historyBeforeThisMessage })
+      body: JSON.stringify({
+        message,
+        sessionId: currentSessionId,
+        history: historyBeforeThisMessage
+      })
     });
   } catch (err) {
     onError?.(err);
@@ -23,7 +50,14 @@ export async function streamChat(message, { onDelta, onDone, onError } = {}) {
   }
 
   if (!response.ok || !response.body) {
-    onError?.(new Error(`Request failed with status ${response.status}`));
+    let detail = `Request failed with status ${response.status}`;
+    try {
+      const errBody = await response.json();
+      if (errBody?.error) detail = errBody.error;
+    } catch {
+      // ignore
+    }
+    onError?.(new Error(detail));
     return;
   }
 
@@ -54,6 +88,7 @@ export async function streamChat(message, { onDelta, onDone, onError } = {}) {
         fullText += data.text;
         onDelta?.(fullText, data.text);
       } else if (eventType === 'done') {
+        if (data.sessionId) sessionId = data.sessionId;
         history.push({ role: 'assistant', content: fullText });
         history = history.slice(-HISTORY_LIMIT);
         onDone?.(fullText);
