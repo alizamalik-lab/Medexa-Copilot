@@ -1486,8 +1486,7 @@
                     "bundled_code": "G0471"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "90912",
@@ -2779,8 +2778,7 @@
                     "bundled_code": "G0471"
                 }
             ]
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "90913",
@@ -3812,8 +3810,7 @@
                     "bundled_code": "G0471"
                 }
             ]
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "92507",
@@ -3994,8 +3991,7 @@
                     "bundled_code": "G0515"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "92508",
@@ -4180,8 +4176,7 @@
                     "bundled_code": "G0515"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "92520",
@@ -5738,8 +5733,7 @@
                     "bundled_code": "99357"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "92521",
@@ -5908,8 +5902,7 @@
                     "bundled_code": "G0505"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "92522",
@@ -6082,8 +6075,7 @@
                     "bundled_code": "G0505"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "92523",
@@ -6256,8 +6248,7 @@
                     "bundled_code": "G0505"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "92524",
@@ -6426,8 +6417,7 @@
                     "bundled_code": "G0505"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "92526",
@@ -6532,8 +6522,7 @@
                     "bundled_code": "G0515"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "92597",
@@ -6862,8 +6851,7 @@
                     "bundled_code": "99357"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "92607",
@@ -6947,8 +6935,7 @@
                     "bundled_code": "97755"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "92608",
@@ -6976,8 +6963,7 @@
                     "bundled_code": "97755"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "92609",
@@ -7058,8 +7044,7 @@
                     "bundled_code": "97755"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "92610",
@@ -7132,8 +7117,7 @@
                     "bundled_code": "96523"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "92611",
@@ -7218,8 +7202,7 @@
                     "bundled_code": "96523"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "92612",
@@ -7300,8 +7283,7 @@
                     "bundled_code": "J2001"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "92614",
@@ -7370,8 +7352,7 @@
                     "bundled_code": "C9742"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "92616",
@@ -7443,8 +7424,7 @@
                     "bundled_code": "C9742"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "93797",
@@ -8797,8 +8777,7 @@
                     "bundled_code": "G0471"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "93798",
@@ -10163,8 +10142,7 @@
                     "bundled_code": "G0471"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "95851",
@@ -11309,8 +11287,7 @@
                     "bundled_code": "97530"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "95852",
@@ -12443,8 +12420,7 @@
                     "bundled_code": "96523"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "95992",
@@ -12496,8 +12472,7 @@
                     "bundled_code": "97530"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "96000",
@@ -12582,8 +12557,7 @@
                     "bundled_code": "97750"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "96001",
@@ -12667,8 +12641,7 @@
                     "bundled_code": "97750"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "96002",
@@ -12764,8 +12737,7 @@
                     "bundled_code": "97750"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "96105",
@@ -14034,8 +14006,7 @@
                     "bundled_code": "G0505"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "96125",
@@ -15132,8 +15103,7 @@
                     "bundled_code": "97158"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97010",
@@ -15161,8 +15131,7 @@
                     "bundled_code": "99186"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97012",
@@ -15499,8 +15468,7 @@
                     "bundled_code": "99186"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97016",
@@ -15865,8 +15833,7 @@
                     "bundled_code": "99186"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97018",
@@ -16243,8 +16210,7 @@
                     "bundled_code": "99186"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97022",
@@ -16681,8 +16647,7 @@
                     "bundled_code": "99186"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97024",
@@ -17055,8 +17020,7 @@
                     "bundled_code": "99186"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97026",
@@ -17433,8 +17397,7 @@
                     "bundled_code": "99186"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97028",
@@ -17811,8 +17774,7 @@
                     "bundled_code": "99186"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97032",
@@ -18193,8 +18155,7 @@
                     "bundled_code": "97168"
                 }
             ]
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97033",
@@ -18519,8 +18480,7 @@
                     "bundled_code": "97168"
                 }
             ]
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97034",
@@ -18861,8 +18821,7 @@
                     "bundled_code": "97168"
                 }
             ]
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97035",
@@ -19239,8 +19198,7 @@
                     "bundled_code": "97168"
                 }
             ]
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97036",
@@ -19593,8 +19551,7 @@
                     "bundled_code": "97168"
                 }
             ]
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97039",
@@ -19910,8 +19867,7 @@
                     "bundled_code": "97168"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97110",
@@ -20372,8 +20328,7 @@
                     "bundled_code": "99186"
                 }
             ]
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97112",
@@ -20850,8 +20805,7 @@
                     "bundled_code": "99186"
                 }
             ]
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97113",
@@ -21220,8 +21174,7 @@
                     "bundled_code": "97750"
                 }
             ]
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97116",
@@ -21666,8 +21619,7 @@
                     "bundled_code": "99186"
                 }
             ]
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97124",
@@ -22072,8 +22024,7 @@
                     "bundled_code": "99186"
                 }
             ]
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97129",
@@ -22350,8 +22301,7 @@
                     "bundled_code": "97168"
                 }
             ]
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97130",
@@ -22595,8 +22545,7 @@
                     "bundled_code": "97168"
                 }
             ]
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97139",
@@ -22912,8 +22861,7 @@
                     "bundled_code": "97168"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97140",
@@ -23422,8 +23370,7 @@
                     "bundled_code": "99186"
                 }
             ]
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97150",
@@ -23976,8 +23923,7 @@
                     "bundled_code": "G0515"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97161",
@@ -25018,8 +24964,7 @@
                     "bundled_code": "G0509"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97162",
@@ -26064,8 +26009,7 @@
                     "bundled_code": "G0509"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97163",
@@ -27110,8 +27054,7 @@
                     "bundled_code": "G0509"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97164",
@@ -28336,8 +28279,7 @@
                     "bundled_code": "G0509"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97165",
@@ -29410,8 +29352,7 @@
                     "bundled_code": "G0509"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97166",
@@ -30484,8 +30425,7 @@
                     "bundled_code": "G0509"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97167",
@@ -31558,8 +31498,7 @@
                     "bundled_code": "G0509"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97168",
@@ -32784,8 +32723,7 @@
                     "bundled_code": "G0509"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97530",
@@ -33326,8 +33264,7 @@
                     "bundled_code": "G0515"
                 }
             ]
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97533",
@@ -33740,8 +33677,7 @@
                     "bundled_code": "97755"
                 }
             ]
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97535",
@@ -34166,8 +34102,7 @@
                     "bundled_code": "G0271"
                 }
             ]
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97537",
@@ -34272,8 +34207,7 @@
                     "bundled_code": "G0271"
                 }
             ]
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97542",
@@ -34358,8 +34292,7 @@
                     "bundled_code": "97755"
                 }
             ]
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97545",
@@ -34444,8 +34377,7 @@
                     "bundled_code": "97755"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97546",
@@ -34478,8 +34410,7 @@
                     "bundled_code": "96523"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97550",
@@ -34499,16 +34430,14 @@
                     "bundled_code": "96523"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97551",
         "ptp": {
             "bundled_into": [],
             "bundles_others": []
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97552",
@@ -34528,8 +34457,7 @@
                     "bundled_code": "96523"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97597",
@@ -51854,8 +51782,7 @@
                     "bundled_code": "G0471"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97598",
@@ -68144,8 +68071,7 @@
                     "bundled_code": "G0457"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97602",
@@ -84706,8 +84632,7 @@
                     "bundled_code": "C8952"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97605",
@@ -88596,8 +88521,7 @@
                     "bundled_code": "G0457"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97606",
@@ -92486,8 +92410,7 @@
                     "bundled_code": "G0457"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97607",
@@ -96200,8 +96123,7 @@
                     "bundled_code": "97164"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97608",
@@ -99914,8 +99836,7 @@
                     "bundled_code": "97607"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97610",
@@ -100036,8 +99957,7 @@
                     "bundled_code": "97608"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97750",
@@ -100330,8 +100250,7 @@
                     "bundled_code": "97172"
                 }
             ]
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97755",
@@ -100564,8 +100483,7 @@
                     "bundled_code": "G0515"
                 }
             ]
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97760",
@@ -101134,8 +101052,7 @@
                     "bundled_code": "97763"
                 }
             ]
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97761",
@@ -101512,8 +101429,7 @@
                     "bundled_code": "97763"
                 }
             ]
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97763",
@@ -102042,8 +101958,7 @@
                     "bundled_code": "97140"
                 }
             ]
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97799",
@@ -102055,8 +101970,7 @@
                     "bundled_code": "96523"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "98966",
@@ -102257,8 +102171,7 @@
                     "bundled_code": "G0250"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "98967",
@@ -102459,8 +102372,7 @@
                     "bundled_code": "G0250"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "98968",
@@ -102661,8 +102573,7 @@
                     "bundled_code": "G0250"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "98970",
@@ -102963,8 +102874,7 @@
                     "bundled_code": "G2063"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "98971",
@@ -103265,8 +103175,7 @@
                     "bundled_code": "G2063"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "98972",
@@ -103567,8 +103476,7 @@
                     "bundled_code": "G2063"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "98975",
@@ -104125,8 +104033,7 @@
                     "bundled_code": "99473"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "98976",
@@ -104539,8 +104446,7 @@
                     "bundled_code": "99473"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "98977",
@@ -104953,16 +104859,14 @@
                     "bundled_code": "99473"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "98979",
         "ptp": {
             "bundled_into": [],
             "bundles_others": []
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "98980",
@@ -105331,8 +105235,7 @@
                     "bundled_code": "99474"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "98981",
@@ -105533,24 +105436,21 @@
                     "bundled_code": "99091"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "98984",
         "ptp": {
             "bundled_into": [],
             "bundles_others": []
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "98985",
         "ptp": {
             "bundled_into": [],
             "bundles_others": []
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "G0281",
@@ -105655,8 +105555,7 @@
                     "bundled_code": "G0329"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "G0283",
@@ -105765,8 +105664,7 @@
                     "bundled_code": "99186"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "G0329",
@@ -105831,8 +105729,7 @@
                     "bundled_code": "G0283"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "G0451",
@@ -106033,32 +105930,28 @@
                     "bundled_code": "G0505"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "G0541",
         "ptp": {
             "bundled_into": [],
             "bundles_others": []
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "G0542",
         "ptp": {
             "bundled_into": [],
             "bundles_others": []
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "G0543",
         "ptp": {
             "bundled_into": [],
             "bundles_others": []
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "G2250",
@@ -106082,8 +105975,7 @@
                     "bundled_code": "99454"
                 }
             ]
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "G2251",
@@ -106107,7 +105999,6 @@
                     "bundled_code": "99422"
                 }
             ]
-        },
-        "isTimed": false
+        }
     }
 ]

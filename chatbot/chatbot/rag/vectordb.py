@@ -116,9 +116,10 @@ class VectorStore:
         query: str,
         k: int = 5,
         score_threshold: float | None = None,
+        filter: dict | None = None,
     ) -> list[tuple[Document, float]]:
         store = self.get_store()
-        results = store.similarity_search_with_score(query, k=k)
+        results = store.similarity_search_with_score(query, k=k, filter=filter)
         if score_threshold is not None:
             results = [(doc, score) for doc, score in results if score <= score_threshold]
         return results

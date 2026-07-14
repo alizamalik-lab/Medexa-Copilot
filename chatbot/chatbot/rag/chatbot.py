@@ -7,19 +7,40 @@ from langchain_core.messages import AIMessage, HumanMessage
 from langchain_core.output_parsers import StrOutputParser
 
 from rag.billing_engine import (
+    _extract_billing_codes,
     try_answer_rule_comparison_explanation,
+    try_cpt_definition_answer,
+    try_unit_calculation_guide,
     try_unit_calculation_payload,
 )
+from rag.billing_orchestrator import detect_requested_topics, try_billing_orchestrator
+from rag.category_engine import try_category_engine
 from rag.scope_guard import try_scope_redirect
 from rag.billing_tools import BillingTools
 from rag.clarification import try_clarification
-from rag.conversation_context import resolve_effective_question, update_focus_code
+from rag.category_tools.area_based import is_area_wound_question
+from rag.category_tools.time_band import (
+    is_category_g_question,
+    is_phone_online_question,
+    is_time_band_category_question,
+)
+from rag.followup_explainer import is_explain_followup, try_followup_explanation
+from rag.conversation_context import (
+    is_independent_topic,
+    references_prior_topic,
+    resolve_active_focus,
+    resolve_effective_question,
+    update_focus_code,
+)
 from rag.intent_detector import (
     BillingToolIntent,
     detect_all_billing_tool_intents,
+    is_multi_topic_question,
 )
 from rag.memory import ConversationMemory
 from rag.prompt import CHAT_PROMPT, FALLBACK_MESSAGE, TOOL_EXPLANATION_PROMPT
+from rag.query_intent import classify_user_intent
+from rag.response_completeness import check_response_completeness
 from rag.response_format import detect_response_format, get_format_instructions
 from rag.response_sanitizer import sanitize_response
 from rag.retriever import ContextRetriever
@@ -60,6 +81,8 @@ class RAGChatbot:
             question, session_history, pending, stored_focus
         )
         effective_question = resolved.text
+        use_prior_context = references_prior_topic(question) and not resolved.reset_focus
+        active_focus = resolve_active_focus(question, resolved, stored_focus)
 
         if resolved.merged_from_pending:
             self.memory.clear_pending_clarification(session_id)
@@ -67,11 +90,119 @@ class RAGChatbot:
                 f"[conversation] merged pending clarification into: "
                 f"{effective_question!r}"
             )
+        elif pending is not None and effective_question == question:
+            # New turn ignored the pending prompt — drop stale clarification state.
+            self.memory.clear_pending_clarification(session_id)
 
-        if resolved.focus_code:
-            self.memory.set_focus_code(session_id, resolved.focus_code)
+        self.memory.set_focus_code(session_id, active_focus)
+        focus_code = active_focus
 
-        focus_code = self.memory.get_focus_code(session_id) or resolved.focus_code
+        # "Explain" / "Why?" / "Show calculation" → expand the previous answer.
+        if is_explain_followup(question):
+            followup = try_followup_explanation(question, session_history)
+            if followup is not None:
+                print(f"[followup] expanding prior answer for: {question!r}")
+                answer = sanitize_response(followup.answer)
+                self._finalize_exchange(session_id, question, question, answer)
+                return {
+                    "answer": answer,
+                    "sources": followup.sources,
+                    "session_id": session_id,
+                }
+
+        classified = classify_user_intent(effective_question)
+        print(
+            f"[intent] primary={classified.primary.value}"
+            + (
+                f" secondary={[item.value for item in classified.secondary]}"
+                if classified.secondary
+                else ""
+            )
+        )
+
+        definition_answer = try_cpt_definition_answer(effective_question)
+        if definition_answer:
+            answer = sanitize_response(definition_answer)
+            print(f"[billing_engine] CPT definition for: {effective_question!r}")
+            self._finalize_exchange(session_id, question, effective_question, answer)
+            return {
+                "answer": answer,
+                "sources": ["billing_engine"],
+                "session_id": session_id,
+            }
+
+        # Priority: Category G phone/online / time_band_select before other billing tools.
+        if is_category_g_question(effective_question) or (
+            is_time_band_category_question(effective_question)
+            and not _extract_billing_codes(effective_question)
+        ):
+            phone_codes = _extract_billing_codes(effective_question)
+            # Pure consult / time-band scenarios (or only time-band CPTs) are owned by Category G.
+            if not phone_codes or is_time_band_category_question(effective_question):
+                category_outcome = try_category_engine(effective_question)
+                if category_outcome is not None:
+                    print(
+                        f"[category_engine] tool={category_outcome.tool_name} "
+                        f"rule={category_outcome.billing_rule} "
+                        f"kind={category_outcome.kind} "
+                        f"category={category_outcome.category_id}"
+                    )
+                    if category_outcome.kind == "clarification":
+                        self.memory.set_pending_clarification(
+                            session_id,
+                            original_question=question,
+                            intent_name="category_clarification",
+                        )
+                        answer = sanitize_response(category_outcome.clarification)
+                        self._finalize_exchange(
+                            session_id, question, effective_question, answer
+                        )
+                        return {
+                            "answer": answer,
+                            "sources": category_outcome.sources,
+                            "session_id": session_id,
+                        }
+                    answer = sanitize_response(category_outcome.answer)
+                    self._finalize_exchange(
+                        session_id, question, effective_question, answer
+                    )
+                    return {
+                        "answer": answer,
+                        "sources": category_outcome.sources,
+                        "session_id": session_id,
+                    }
+
+        # Priority: Billing Engine / Category / MUE / NCCI / ICD tools before RAG/LLM.
+        orchestrated = try_billing_orchestrator(
+            effective_question,
+            self.billing_tools,
+            history=session_history,
+            focus_billing_rule=self.memory.get_focus_billing_rule(session_id),
+        )
+        if orchestrated is not None:
+            print(
+                f"[orchestrator] sources={orchestrated.sources} "
+                f"type={orchestrated.structured.get('type')}"
+            )
+            answer = sanitize_response(orchestrated.answer)
+            focus_rule = orchestrated.structured.get("focus_billing_rule")
+            if focus_rule:
+                self.memory.set_focus_billing_rule(session_id, str(focus_rule))
+            elif orchestrated.structured.get("type") in {
+                "billing_rule_inventory",
+                "billing_rule_summary",
+            }:
+                rules = orchestrated.structured.get("rules") or []
+                if rules and rules[0].get("billing_rule"):
+                    self.memory.set_focus_billing_rule(
+                        session_id, str(rules[0]["billing_rule"])
+                    )
+            self._finalize_exchange(session_id, question, effective_question, answer)
+            return {
+                "answer": answer,
+                "sources": orchestrated.sources,
+                "session_id": session_id,
+            }
 
         comparison_answer = try_answer_rule_comparison_explanation(effective_question)
         if comparison_answer:
@@ -84,28 +215,103 @@ class RAGChatbot:
                 "session_id": session_id,
             }
 
+        # Deterministic unit math before category tools (keeps answers concise).
         unit_payload = try_unit_calculation_payload(effective_question)
-        tool_intents = detect_all_billing_tool_intents(
-            effective_question, session_history, focus_code
-        )
+        unit_guide = try_unit_calculation_guide(effective_question)
+        if unit_payload and not is_multi_topic_question(effective_question):
+            answer = sanitize_response(unit_payload["answer"])
+            print(
+                f"[billing_engine] deterministic unit answer for: {effective_question!r}"
+            )
+            self._finalize_exchange(session_id, question, effective_question, answer)
+            return {
+                "answer": answer,
+                "sources": ["billing_engine"],
+                "session_id": session_id,
+            }
 
-        if not resolved.merged_from_pending:
-            clarification = try_clarification(effective_question, session_history)
-            if clarification:
-                print(f"[clarification] follow-up required for: {effective_question!r}")
+        # Category JSON engine — skip when multi-topic needs tools (handled above).
+        category_outcome = None
+        if not is_multi_topic_question(effective_question):
+            category_outcome = try_category_engine(effective_question)
+        if category_outcome is not None:
+            print(
+                f"[category_engine] tool={category_outcome.tool_name} "
+                f"rule={category_outcome.billing_rule} "
+                f"kind={category_outcome.kind} "
+                f"category={category_outcome.category_id}"
+            )
+            if category_outcome.kind == "clarification":
                 self.memory.set_pending_clarification(
                     session_id,
                     original_question=question,
-                    intent_name=clarification.intent_name,
+                    intent_name="category_clarification",
                 )
+                answer = sanitize_response(category_outcome.clarification)
                 self._finalize_exchange(
-                    session_id, question, effective_question, clarification.message
+                    session_id, question, effective_question, answer
                 )
                 return {
-                    "answer": clarification.message,
-                    "sources": [],
+                    "answer": answer,
+                    "sources": category_outcome.sources,
                     "session_id": session_id,
                 }
+
+            answer = sanitize_response(category_outcome.answer)
+            self._finalize_exchange(session_id, question, effective_question, answer)
+            return {
+                "answer": answer,
+                "sources": category_outcome.sources,
+                "session_id": session_id,
+            }
+
+        if unit_guide:
+            answer = sanitize_response(unit_guide)
+            print(f"[billing_engine] unit calculation guide for: {effective_question!r}")
+            self._finalize_exchange(session_id, question, effective_question, answer)
+            return {
+                "answer": answer,
+                "sources": ["billing_engine"],
+                "session_id": session_id,
+            }
+
+        tool_intents = detect_all_billing_tool_intents(
+            effective_question,
+            session_history if use_prior_context else None,
+            focus_code if use_prior_context else None,
+            use_focus_code=use_prior_context,
+        )
+
+        if not resolved.merged_from_pending:
+            # Area/wound and phone/online questions are owned by the category engine.
+            if not is_area_wound_question(
+                effective_question
+            ) and not is_category_g_question(effective_question):
+                clarification = try_clarification(
+                    effective_question,
+                    session_history,
+                    include_history=use_prior_context,
+                )
+                if clarification:
+                    print(
+                        f"[clarification] follow-up required for: {effective_question!r}"
+                    )
+                    self.memory.set_pending_clarification(
+                        session_id,
+                        original_question=question,
+                        intent_name=clarification.intent_name,
+                    )
+                    self._finalize_exchange(
+                        session_id,
+                        question,
+                        effective_question,
+                        clarification.message,
+                    )
+                    return {
+                        "answer": clarification.message,
+                        "sources": [],
+                        "session_id": session_id,
+                    }
 
         if tool_intents:
             tool_answer = self._try_billing_tools(
@@ -128,7 +334,17 @@ class RAGChatbot:
                 "session_id": session_id,
             }
 
-        if focus_code and self.billing_tools is not None:
+        if unit_guide:
+            answer = sanitize_response(unit_guide)
+            print(f"[billing_engine] unit calculation guide for: {effective_question!r}")
+            self._finalize_exchange(session_id, question, effective_question, answer)
+            return {
+                "answer": answer,
+                "sources": ["billing_engine"],
+                "session_id": session_id,
+            }
+
+        if focus_code and use_prior_context and self.billing_tools is not None:
             contextual = self._try_contextual_followup(
                 question, effective_question, session_id, focus_code
             )
@@ -137,7 +353,11 @@ class RAGChatbot:
 
         docs = self.retriever.retrieve(effective_question)
         sources = self.retriever.extract_sources(docs)
-        history_messages = self._history_as_langchain_messages(session_id)
+        history_messages = (
+            self._history_as_langchain_messages(session_id)
+            if use_prior_context
+            else []
+        )
 
         print(f"[chat] session_id={session_id}")
         print(f"[chat] history_turns={len(history_messages)}")
@@ -145,7 +365,7 @@ class RAGChatbot:
         print(f"[retrieval] returned_chunks={len(docs)}")
 
         if not docs or not any(d.page_content.strip() for d in docs):
-            answer = self._contextual_fallback(focus_code)
+            answer = self._contextual_fallback(focus_code if use_prior_context else None)
             self._finalize_exchange(session_id, question, effective_question, answer)
             return {"answer": answer, "sources": [], "session_id": session_id}
 
@@ -165,7 +385,7 @@ class RAGChatbot:
             }
         )
 
-        if self._is_insufficient_answer(answer) and focus_code and self.billing_tools:
+        if self._is_insufficient_answer(answer) and focus_code and use_prior_context and self.billing_tools:
             contextual = self._try_contextual_followup(
                 question, effective_question, session_id, focus_code
             )
@@ -173,7 +393,7 @@ class RAGChatbot:
                 return contextual
 
         if self._is_insufficient_answer(answer):
-            answer = self._contextual_fallback(focus_code)
+            answer = self._contextual_fallback(focus_code if use_prior_context else None)
 
         answer = sanitize_response(answer.strip())
         self._finalize_exchange(session_id, question, effective_question, answer)
@@ -186,10 +406,14 @@ class RAGChatbot:
         session_id: str,
         focus_code: str,
     ) -> dict | None:
+        if not references_prior_topic(question):
+            return None
+
         intents = detect_all_billing_tool_intents(
             effective_question,
             self.memory.get_messages(session_id),
             focus_code,
+            use_focus_code=True,
         )
         if not intents:
             intents = [
@@ -256,7 +480,11 @@ class RAGChatbot:
             return None
 
         billing_data = format_combined_billing_data(tool_results, unit_payload)
-        history_messages = self._history_as_langchain_messages(session_id)
+        history_messages = (
+            self._history_as_langchain_messages(session_id)
+            if references_prior_topic(question)
+            else []
+        )
         tool_count = len(tool_results) + (1 if unit_payload else 0)
         response_format = detect_response_format(
             effective_question,
@@ -318,11 +546,15 @@ class RAGChatbot:
         answer: str,
     ) -> None:
         history = self.memory.get_messages(session_id)
+        use_history = references_prior_topic(question) and not is_independent_topic(
+            question, self.memory.get_focus_code(session_id)
+        )
         focus = update_focus_code(
             self.memory.get_focus_code(session_id),
             question,
             effective_question,
             history,
+            include_history=use_history,
         )
         if focus:
             self.memory.set_focus_code(session_id, focus)

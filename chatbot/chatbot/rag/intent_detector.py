@@ -28,25 +28,30 @@ class BillingToolIntent:
     reason: str
 
 
-_NCCI_HINTS = (
-    r"\bncci\b",
-    r"\bptp\b",
-    r"ncci restriction",
-    r"bill(?:ed)?\s+together",
-    r"billed with",
-    r"same\s+(?:day|visit|date)",
-    r"bundle",
-    r"modifier\s*59",
-    r"can i bill",
-    r"allowed together",
-)
-
 _MUE_HINTS = (
     r"\bmue\b",
     r"medically unlikely",
     r"unit(?:s)?\s+limit",
     r"max(?:imum)?\s+units",
     r"how many units",
+    r"billed\s+\d+\s+units?",
+    r"bill(?:ed|ing)?\s+\d+\s+units?",
+)
+
+_NCCI_HINTS = (
+    r"\bncci\b",
+    r"\bptp\b",
+    r"ncci restriction",
+    r"bill(?:ed)?\s+together",
+    r"billed with",
+    r"bill(?:ed)?\s+with",
+    r"same\s+(?:day|visit|date)",
+    r"bundle",
+    r"modifier\s*59",
+    r"can i bill",
+    r"can it be billed",
+    r"can they be billed",
+    r"allowed together",
 )
 
 _ICD_HINTS = (
@@ -165,6 +170,8 @@ def is_multi_topic_question(question: str) -> bool:
 
     topic_markers = (
         "explain",
+        "what is",
+        "what are",
         "timed",
         "mue",
         "icd",
@@ -172,11 +179,18 @@ def is_multi_topic_question(question: str) -> bool:
         "modifier",
         "bill",
         "medicare",
+        "ama",
         "units",
         "calculate",
         "together",
+        "add-on",
+        "add on",
+        "addon",
+        "aoc",
     )
     hits = sum(1 for marker in topic_markers if marker in lowered)
+    if hits >= 2 and (" and " in lowered or "," in lowered):
+        return True
     return hits >= 3
 
 
@@ -184,12 +198,14 @@ def detect_all_billing_tool_intents(
     question: str,
     history: list[ChatMessage] | None = None,
     focus_code: str | None = None,
+    *,
+    use_focus_code: bool = True,
 ) -> list[BillingToolIntent]:
     lowered = question.lower().strip()
-    combined = _combined_text(question, history)
-    codes = _extract_cpt_codes(combined)
-    icd_codes = _extract_icd10_codes(combined)
-    if not codes and focus_code:
+    combined = _combined_text(question, history) if use_focus_code else question
+    codes = _extract_cpt_codes(combined if use_focus_code else question)
+    icd_codes = _extract_icd10_codes(question)
+    if not codes and focus_code and use_focus_code:
         codes = [focus_code]
 
     intents: list[BillingToolIntent] = []
@@ -214,22 +230,26 @@ def detect_all_billing_tool_intents(
     if codes and (
         _matches_any(lowered, _MUE_HINTS) or re.search(r"\bits?\s+mue\b", lowered)
     ):
-        intents.append(
-            BillingToolIntent(
-                tool="lookup_mue",
-                params={"cpt_code": codes[0]},
-                reason="mue_lookup",
+        for code in codes:
+            intents.append(
+                BillingToolIntent(
+                    tool="lookup_mue",
+                    params={"cpt_code": code},
+                    reason="mue_lookup",
+                )
             )
-        )
 
     if len(codes) >= 2 and _matches_any(lowered, _NCCI_HINTS):
-        intents.append(
-            BillingToolIntent(
-                tool="check_ncci",
-                params={"cpt1": codes[0], "cpt2": codes[1]},
-                reason="ncci_pair_lookup",
-            )
-        )
+        # Check every unique pair — never stop after the first two codes.
+        for i, left in enumerate(codes):
+            for right in codes[i + 1 :]:
+                intents.append(
+                    BillingToolIntent(
+                        tool="check_ncci",
+                        params={"cpt1": left, "cpt2": right},
+                        reason="ncci_pair_lookup",
+                    )
+                )
     elif len(codes) == 1 and _matches_any(lowered, _NCCI_HINTS):
         intents.append(
             BillingToolIntent(
@@ -240,35 +260,38 @@ def detect_all_billing_tool_intents(
         )
 
     if codes and _matches_any(lowered, _ICD_HINTS) and not icd_codes:
-        intents.append(
-            BillingToolIntent(
-                tool="lookup_icd",
-                params={"cpt_code": codes[0]},
-                reason="icd_lookup",
+        for code in codes:
+            intents.append(
+                BillingToolIntent(
+                    tool="lookup_icd",
+                    params={"cpt_code": code},
+                    reason="icd_lookup",
+                )
             )
-        )
 
     if codes and _matches_any(lowered, _AOC_HINTS):
-        intents.append(
-            BillingToolIntent(
-                tool="lookup_aoc",
-                params={"cpt_code": codes[0]},
-                reason="aoc_lookup",
+        for code in codes:
+            intents.append(
+                BillingToolIntent(
+                    tool="lookup_aoc",
+                    params={"cpt_code": code},
+                    reason="aoc_lookup",
+                )
             )
-        )
 
     if codes and (
         _matches_any(lowered, _CPT_HINTS)
         or _matches_any(lowered, _BILLABLE_HINTS)
         or _matches_any(lowered, _TIMED_HINTS)
     ):
-        intents.append(
-            BillingToolIntent(
-                tool="lookup_cpt",
-                params={"cpt_code": codes[0]},
-                reason="cpt_lookup",
+        for code in codes:
+            intents.append(
+                BillingToolIntent(
+                    tool="lookup_cpt",
+                    params={"cpt_code": code},
+                    reason="cpt_lookup",
+                )
             )
-        )
     elif codes and len(codes) == 1 and re.search(
         r"\b(is|are)\s+(?:it|this|that)\b", lowered
     ):

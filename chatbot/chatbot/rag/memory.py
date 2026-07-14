@@ -22,6 +22,7 @@ class ConversationMemory:
         self.max_exchanges = max(1, max_exchanges)
         self._sessions: dict[str, list[ChatMessage]] = {}
         self._focus_codes: dict[str, str] = {}
+        self._focus_billing_rules: dict[str, str] = {}
         self._pending: dict[str, PendingClarification] = {}
         self._lock = Lock()
 
@@ -39,6 +40,17 @@ class ConversationMemory:
                 self._focus_codes[session_id] = cpt_code
             else:
                 self._focus_codes.pop(session_id, None)
+
+    def get_focus_billing_rule(self, session_id: str) -> str | None:
+        with self._lock:
+            return self._focus_billing_rules.get(session_id)
+
+    def set_focus_billing_rule(self, session_id: str, billing_rule: str | None) -> None:
+        with self._lock:
+            if billing_rule:
+                self._focus_billing_rules[session_id] = billing_rule
+            else:
+                self._focus_billing_rules.pop(session_id, None)
 
     def get_pending_clarification(self, session_id: str) -> PendingClarification | None:
         with self._lock:
@@ -70,6 +82,7 @@ class ConversationMemory:
         with self._lock:
             self._sessions.pop(session_id, None)
             self._focus_codes.pop(session_id, None)
+            self._focus_billing_rules.pop(session_id, None)
             self._pending.pop(session_id, None)
 
     def format_history(self, session_id: str) -> str:

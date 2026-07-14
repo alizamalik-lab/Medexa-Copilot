@@ -113,74 +113,57 @@ def _matches_any(text: str, patterns: tuple[str, ...]) -> bool:
 
 
 SIMPLE_FORMAT_RULES = """
-**Format: Simple answer (2–4 lines)**
+**Format: Concise direct answer (1–5 lines)**
 
-Give a concise, confident answer in 2–4 short lines.
-Lead with the direct answer. Bold key values such as codes, limits, and unit counts.
+Give only the direct answer unless the user asked for detail.
+Lead with the fact. Bold key values. No long setup paragraphs.
 
-Example:
-The MUE (Medically Unlikely Edit) limit for CPT 97110 is **6 units** per date of service.
-"""
-
-COMPARISON_FORMAT_RULES = """
-**Format: Comparison table**
-
-The user is comparing two or more concepts. Use a clear Markdown table — not a long paragraph.
-
-For CMS 8-Minute Rule vs AMA Rule of Eight, use:
-
-| Topic | CMS 8-Minute Rule | AMA Rule of Eight |
-|-------|-------------------|-------------------|
-| Used By | Medicare | Commonly used by many commercial payers |
-| Calculation Method | Pool all timed CPT minutes | Calculate each CPT code separately |
-| Unit Assignment | Based on total pooled minutes | Each CPT must independently qualify |
-| Typical Use | Medicare billing | Commercial payer billing (when adopted) |
-
-End with:
-"Always verify the payer's billing guidelines, as commercial insurance policies may differ."
-"""
-
-MULTIPLE_FORMAT_RULES = """
-**Format: Multiple sections**
-
-The user asked several questions in one message. Do NOT write one long paragraph.
-Organize the answer with `###` headings and bullet points under each section.
-
-Example layout:
-
-### CPT 97110
-• Description...
-
-### MUE
-• **6 units**
-
-### ICD-10 Mapping
-• ...
-
-### Billing
-• ...
-
-### Medicare Units
-• **2 billable units** under the CMS 8-Minute Rule
+Examples:
+- MUE: **6** units.
+- Yes. It is a timed CPT code billed under the CMS 8-Minute Rule.
+- Medicare Units: **2**.
 """
 
 CALCULATION_FORMAT_RULES = """
-**Format: Step-by-step calculation**
+**Format: Calculation result (concise by default)**
 
-Walk through the calculation with numbered steps, then state the final answer.
+If the user did NOT ask to show calculation / step-by-step:
+- Return only the final units (e.g. "Medicare Units: **2**.").
+
+If they asked for steps, show numbered calculation steps and the final answer.
 For CMS Medicare calculations, use the CMS conversion table (NOT "divide by 8").
+"""
 
-Example layout:
+COMPARISON_FORMAT_RULES = """
+**Format: Compact comparison table**
 
-**Step 1:** Total timed minutes = **23 minutes**
+Show only key differences in a short Markdown table, then one sentence on why they differ.
+Do not include lengthy calculation walkthroughs unless asked.
 
-**Step 2:** Rule applied = **CMS 8-Minute Rule**
-• 8–22 minutes = 1 unit
-• 23–37 minutes = 2 units
+Example:
 
-**Step 3:** Billable units = **2 units**
+| Rule | Units |
+|------|------:|
+| Medicare (CMS) | 1 |
+| AMA | 2 |
 
-**Final Answer:** **2 units**
+CMS pools timed minutes; AMA calculates each CPT independently.
+"""
+
+MULTIPLE_FORMAT_RULES = """
+**Format: Compact multi-topic bullets**
+
+Answer EACH asked item with one concise bullet under the CPT heading.
+Do not write long paragraphs.
+
+Example:
+
+**CPT 97110**
+- Description: ...
+- Timed: Yes.
+- MUE: **6** units.
+- With 97530: Yes, they can be billed together.
+- Modifier 59: Not required based on the current NCCI data.
 """
 
 LONG_EXPLANATION_FORMAT_RULES = """

@@ -13,6 +13,22 @@ _MODIFIER_REASONS = {
     "9": "NCCI PTP edit marked not applicable in the source data.",
 }
 
+_TIMED_BILLING_RULES = frozenset({"8_minute_rule", "full_block_required"})
+_EIGHT_MINUTE_RULES = frozenset({"8_minute_rule"})
+
+
+def _billing_rule_flags(billing_rule: str) -> tuple[bool | None, bool | None]:
+    if not billing_rule:
+        return None, None
+    rule = billing_rule.strip().lower()
+    if rule in _EIGHT_MINUTE_RULES:
+        return True, True
+    if rule in _TIMED_BILLING_RULES:
+        return True, False
+    if rule.startswith("untimed"):
+        return False, False
+    return None, None
+
 
 class BillingTools:
     def __init__(self, json_dir: Path):
@@ -116,19 +132,25 @@ class BillingTools:
         if not cpt_info.get("found"):
             return {"found": False, "cpt_code": cpt_code}
 
-        billing_type = {}
+        billing_rule = ""
+        general = self.store.get_general(cpt_code)
+        if general:
+            billing_rule = str(general.get("billingRule", "")).strip()
+
         knowledge = self.store.get_knowledge(cpt_code)
+        billing_guidance = ""
         if knowledge:
-            billing_type = knowledge.get("billing_type", {}) or {}
+            notes = knowledge.get("notes", "")
+            if notes:
+                billing_guidance = str(notes)
 
         return {
             "found": True,
             "cpt_code": cpt_code,
             "timed": cpt_info.get("timed"),
             "eight_minute_rule": cpt_info.get("eight_minute_rule"),
-            "unit_duration": billing_type.get("unit_duration"),
-            "unit_rules": billing_type.get("unit_rule", []),
-            "billing_guidance": billing_type.get("billing_guidance", ""),
+            "billing_rule": billing_rule,
+            "billing_guidance": billing_guidance,
             "billable_guidance": cpt_info.get("billable_guidance"),
             "description": cpt_info.get("description"),
         }
@@ -138,13 +160,18 @@ class BillingTools:
         if not record:
             return {"found": False, "cpt_code": cpt_code}
 
+        billing_rule = str(record.get("billingRule", "")).strip()
+        timed, _ = _billing_rule_flags(billing_rule)
+
         return {
             "found": True,
             "cpt_code": cpt_code,
             "is_addon_code": record.get("isAddonCode"),
             "parent_code": record.get("parentCode"),
             "addon_codes_allowed": record.get("addonCodesAllowed", []),
-            "is_timed": record.get("isTimed"),
+            "billing_rule": billing_rule,
+            "billing_time": record.get("billingTime"),
+            "is_timed": timed,
         }
 
     def lookup_cpt(self, cpt_code: str) -> dict[str, Any]:
@@ -156,10 +183,11 @@ class BillingTools:
         timed = None
         description = ""
         eight_minute_rule = None
+        billing_rule = ""
         if general:
             description = general.get("description", "")
-            timed = general.get("isTimed")
-            eight_minute_rule = general.get("isEightMinuteRule")
+            billing_rule = str(general.get("billingRule", "")).strip()
+            timed, eight_minute_rule = _billing_rule_flags(billing_rule)
 
         therapy_discipline: list[str] = []
         documentation_notes: list[str] = []
@@ -167,16 +195,13 @@ class BillingTools:
         short_name = ""
         service_category = ""
         if knowledge:
-            short_name = knowledge.get("short_name", "")
-            service_category = knowledge.get("service_category", "")
-            therapy_discipline = knowledge.get("therapy_disciplines", []) or []
-            documentation_notes = knowledge.get("documentation_requirements", []) or []
-            billing_notes = knowledge.get("billing_notes", []) or []
+            short_name = knowledge.get("label", "")
+            therapy_discipline = knowledge.get("disciplines", []) or []
+            notes = knowledge.get("notes", "")
+            if notes:
+                billing_notes = [str(notes)]
             if not description:
-                description = knowledge.get("purpose", "") or short_name
-            if timed is None:
-                billing_type = knowledge.get("billing_type", {})
-                timed = billing_type.get("timed")
+                description = short_name
 
         return {
             "found": True,
@@ -184,6 +209,7 @@ class BillingTools:
             "short_name": short_name,
             "description": description,
             "service_category": service_category,
+            "billing_rule": billing_rule,
             "timed": timed,
             "untimed": not timed if timed is not None else None,
             "eight_minute_rule": eight_minute_rule,

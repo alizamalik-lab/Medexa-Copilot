@@ -1,4 +1,4 @@
-"""Remove implementation language from user-facing assistant responses."""
+"""Remove implementation language and leaked chain-of-thought from responses."""
 
 from __future__ import annotations
 
@@ -68,9 +68,52 @@ _FORBIDDEN_PHRASES = (
     "the database",
 )
 
+_THINKING_MARKERS = (
+    "here's a thinking process",
+    "thinking process:",
+    "analyze user input",
+    "analyze billing data",
+    "draft response",
+    "self-correction",
+    "[output generation]",
+    "output matches response",
+    "final check of the prompt",
+    "(done.)",
+)
+
+
+def _strip_chain_of_thought(answer: str) -> str:
+    lowered = answer.lower()
+    if not any(marker in lowered for marker in _THINKING_MARKERS):
+        return answer
+
+    paragraphs = [part.strip() for part in re.split(r"\n\s*\n", answer) if part.strip()]
+    clean_paragraphs: list[str] = []
+    for paragraph in paragraphs:
+        paragraph_lower = paragraph.lower()
+        if any(marker in paragraph_lower for marker in _THINKING_MARKERS):
+            continue
+        if paragraph.startswith("[") and paragraph.endswith("]"):
+            continue
+        if "✅" in paragraph and len(paragraph) < 120:
+            continue
+        clean_paragraphs.append(paragraph)
+
+    if clean_paragraphs:
+        return clean_paragraphs[-1]
+
+    match = re.search(
+        r"(?is)(billing unit calculation|g\d{4}|\b\d{5}\b).*$",
+        answer,
+    )
+    if match:
+        return match.group(0).strip()
+
+    return answer
+
 
 def sanitize_response(answer: str) -> str:
-    cleaned = answer.strip()
+    cleaned = _strip_chain_of_thought(answer.strip())
     for pattern, replacement in _REPLACEMENTS:
         cleaned = pattern.sub(replacement, cleaned)
 

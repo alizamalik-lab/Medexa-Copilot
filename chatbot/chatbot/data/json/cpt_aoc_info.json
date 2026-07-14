@@ -1,809 +1,164 @@
 [
     {
-        "cpt_code": "90901",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [
-            "90912"
-        ],
-        "isTimed": false
-    },
-    {
         "cpt_code": "90912",
+        "billingRule": "8_minute_rule",
+        "billingTime": "15 minutes per unit",
         "isAddonCode": false,
         "parentCode": null,
         "addonCodesAllowed": [
             "90913"
-        ],
-        "isTimed": true
+        ]
     },
     {
         "cpt_code": "90913",
+        "billingRule": "8_minute_rule",
+        "billingTime": "same as primary",
         "isAddonCode": true,
         "parentCode": "90912",
-        "addonCodesAllowed": [],
-        "isTimed": true
-    },
-    {
-        "cpt_code": "92507",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [
-            "0770T"
-        ],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "92508",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [
-            "0770T"
-        ],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "92520",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "92521",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "92522",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "92523",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "92524",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "92526",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "92597",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
+        "addonCodesAllowed": []
     },
     {
         "cpt_code": "92607",
+        "billingRule": "full_block_required",
+        "billingTime": "60 minutes",
         "isAddonCode": false,
         "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
+        "addonCodesAllowed": [
+            "92608"
+        ]
     },
     {
         "cpt_code": "92608",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "92609",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "92610",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "92611",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "92612",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "92614",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "92616",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "93797",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "93798",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "95851",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "95852",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "95992",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "96000",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "96001",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "96002",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "96105",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "96125",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "97010",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "97012",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "97016",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "97018",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "97022",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "97024",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "97026",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "97028",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "97032",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": true
-    },
-    {
-        "cpt_code": "97033",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": true
-    },
-    {
-        "cpt_code": "97034",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": true
-    },
-    {
-        "cpt_code": "97035",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": true
-    },
-    {
-        "cpt_code": "97036",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": true
-    },
-    {
-        "cpt_code": "97039",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "97110",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [
-            "0770T"
-        ],
-        "isTimed": true
-    },
-    {
-        "cpt_code": "97112",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [
-            "0770T"
-        ],
-        "isTimed": true
-    },
-    {
-        "cpt_code": "97113",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": true
-    },
-    {
-        "cpt_code": "97116",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [
-            "0791T"
-        ],
-        "isTimed": true
-    },
-    {
-        "cpt_code": "97124",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": true
+        "billingRule": "full_block_required",
+        "billingTime": "30 minutes per unit",
+        "isAddonCode": true,
+        "parentCode": "92607",
+        "addonCodesAllowed": []
     },
     {
         "cpt_code": "97129",
+        "billingRule": "8_minute_rule",
+        "billingTime": "15 minutes per unit",
         "isAddonCode": false,
         "parentCode": null,
         "addonCodesAllowed": [
-            "0770T",
             "97130"
-        ],
-        "isTimed": true
+        ]
     },
     {
         "cpt_code": "97130",
+        "billingRule": "8_minute_rule",
+        "billingTime": "same as primary",
         "isAddonCode": true,
         "parentCode": "97129",
-        "addonCodesAllowed": [],
-        "isTimed": true
-    },
-    {
-        "cpt_code": "97139",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "97140",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": true
-    },
-    {
-        "cpt_code": "97150",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [
-            "0770T"
-        ],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "97161",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "97162",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "97163",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "97164",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "97165",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "97166",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "97167",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "97168",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "97530",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [
-            "0770T"
-        ],
-        "isTimed": true
-    },
-    {
-        "cpt_code": "97533",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [
-            "0770T"
-        ],
-        "isTimed": true
-    },
-    {
-        "cpt_code": "97535",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [
-            "0770T"
-        ],
-        "isTimed": true
-    },
-    {
-        "cpt_code": "97537",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [
-            "0770T"
-        ],
-        "isTimed": true
-    },
-    {
-        "cpt_code": "97542",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": true
+        "addonCodesAllowed": []
     },
     {
         "cpt_code": "97545",
+        "billingRule": "full_block_required",
+        "billingTime": "2 hours",
         "isAddonCode": false,
         "parentCode": null,
         "addonCodesAllowed": [
             "97546"
-        ],
-        "isTimed": false
+        ]
     },
     {
         "cpt_code": "97546",
+        "billingRule": "full_block_required",
+        "billingTime": "60 minutes per unit",
         "isAddonCode": true,
         "parentCode": "97545",
-        "addonCodesAllowed": [],
-        "isTimed": false
+        "addonCodesAllowed": []
     },
     {
         "cpt_code": "97550",
+        "billingRule": "full_block_required",
+        "billingTime": "30 minutes",
         "isAddonCode": false,
         "parentCode": null,
         "addonCodesAllowed": [
             "97551"
-        ],
-        "isTimed": false
+        ]
     },
     {
         "cpt_code": "97551",
+        "billingRule": "full_block_required",
+        "billingTime": "15 minutes per unit",
         "isAddonCode": true,
         "parentCode": "97550",
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "97552",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
+        "addonCodesAllowed": []
     },
     {
         "cpt_code": "97597",
+        "billingRule": "area_based",
+        "billingTime": "20 sq cm",
         "isAddonCode": false,
         "parentCode": null,
         "addonCodesAllowed": [
             "97598"
-        ],
-        "isTimed": false
+        ]
     },
     {
         "cpt_code": "97598",
+        "billingRule": "area_based",
+        "billingTime": "20 sq cm per unit",
         "isAddonCode": true,
         "parentCode": "97597",
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "97602",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "97605",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "97606",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
+        "addonCodesAllowed": []
     },
     {
         "cpt_code": "97607",
+        "billingRule": "area_based",
+        "billingTime": "per wound (<=50 sq cm)",
         "isAddonCode": false,
         "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
+        "addonCodesAllowed": [
+            "97608"
+        ]
     },
     {
         "cpt_code": "97608",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "97610",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "97750",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": true
-    },
-    {
-        "cpt_code": "97755",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": true
-    },
-    {
-        "cpt_code": "97760",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": true
-    },
-    {
-        "cpt_code": "97761",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": true
-    },
-    {
-        "cpt_code": "97763",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": true
-    },
-    {
-        "cpt_code": "97799",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "98966",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "98967",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "98968",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "98970",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "98971",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "98972",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "98975",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [
-            "98976",
-            "98977",
-            "98984",
-            "98985"
-        ],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "98976",
+        "billingRule": "area_based",
+        "billingTime": "50 sq cm per unit",
         "isAddonCode": true,
-        "parentCode": "98975",
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "98977",
-        "isAddonCode": true,
-        "parentCode": "98975",
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "98979",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [
-            "98980"
-        ],
-        "isTimed": false
+        "parentCode": "97607",
+        "addonCodesAllowed": []
     },
     {
         "cpt_code": "98980",
+        "billingRule": "full_block_required",
+        "billingTime": "20 minutes",
         "isAddonCode": false,
         "parentCode": null,
         "addonCodesAllowed": [
             "98981"
-        ],
-        "isTimed": false
+        ]
     },
     {
         "cpt_code": "98981",
+        "billingRule": "full_block_required",
+        "billingTime": "same as primary",
         "isAddonCode": true,
         "parentCode": "98980",
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "98984",
-        "isAddonCode": true,
-        "parentCode": "98975",
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "98985",
-        "isAddonCode": true,
-        "parentCode": "98975",
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "G0281",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "G0283",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "G0329",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "G0451",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
+        "addonCodesAllowed": []
     },
     {
         "cpt_code": "G0541",
+        "billingRule": "full_block_required",
+        "billingTime": "30 minutes",
         "isAddonCode": false,
         "parentCode": null,
         "addonCodesAllowed": [
             "G0542"
-        ],
-        "isTimed": false
+        ]
     },
     {
         "cpt_code": "G0542",
+        "billingRule": "full_block_required",
+        "billingTime": "15 minutes per unit",
         "isAddonCode": true,
         "parentCode": "G0541",
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "G0543",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "G2250",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
-    },
-    {
-        "cpt_code": "G2251",
-        "isAddonCode": false,
-        "parentCode": null,
-        "addonCodesAllowed": [],
-        "isTimed": false
+        "addonCodesAllowed": []
     }
 ]

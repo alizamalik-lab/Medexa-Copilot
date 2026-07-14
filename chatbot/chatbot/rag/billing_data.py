@@ -32,7 +32,7 @@ class BillingDataStore:
             self._icd10 = self._index_file("cpt_icd10_info.json")
             self._aoc = self._index_file("cpt_aoc_info.json")
             self._general = self._index_file("cpt_general_info.json")
-            self._knowledge = self._index_file("cpt_knowledge.json")
+            self._knowledge = self._index_lookup_file("medexa_cpt_lookup.json")
             self._loaded = True
 
     def _index_file(self, filename: str) -> dict[str, dict]:
@@ -44,6 +44,23 @@ class BillingDataStore:
         indexed: dict[str, dict] = {}
         for record in records:
             code = str(record.get("cpt_code", "")).strip()
+            if code:
+                indexed[code] = record
+        return indexed
+
+    def _index_lookup_file(self, filename: str) -> dict[str, dict]:
+        path = self.json_dir / filename
+        if not path.exists():
+            return {}
+        with path.open(encoding="utf-8") as handle:
+            data = json.load(handle)
+        if not isinstance(data, dict):
+            return {}
+        indexed: dict[str, dict] = {}
+        for key, record in data.items():
+            if key.startswith("_") or not isinstance(record, dict):
+                continue
+            code = str(record.get("code") or key).strip()
             if code:
                 indexed[code] = record
         return indexed

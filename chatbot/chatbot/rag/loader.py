@@ -9,6 +9,11 @@ from pypdf import PdfReader
 from rag.progress import log_progress, progress_bar
 
 
+def _looks_like_cpt_code(value: str) -> bool:
+    code = value.strip().upper()
+    return code.isdigit() or (len(code) >= 4 and code[0].isdigit())
+
+
 class DocumentLoader:
     """Loads PDF and JSON files from data directories."""
 
@@ -93,6 +98,20 @@ class DocumentLoader:
         self, data: Any, json_path: Path
     ) -> list[Document]:
         """Create one Document per CPT-like record when the JSON is a list of dicts."""
+        if isinstance(data, dict):
+            records: list[dict] = []
+            for key, item in data.items():
+                if key.startswith("_") or not isinstance(item, dict):
+                    continue
+                code = str(item.get("code") or item.get("cpt_code") or key).strip()
+                if not _looks_like_cpt_code(code):
+                    continue
+                record = dict(item)
+                record.setdefault("cpt_code", code)
+                records.append(record)
+            if records:
+                data = records
+
         if not isinstance(data, list) or not all(isinstance(item, dict) for item in data):
             readable_text = self._json_to_readable_text(data)
             return [

@@ -6,8 +6,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Nature of Service/Procedure"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "90912",
@@ -16,8 +15,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "90913",
@@ -26,8 +24,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: CMS Workgroup"
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "92507",
@@ -36,8 +33,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Nature of Service/Procedure"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "92508",
@@ -46,8 +42,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Nature of Service/Procedure"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "92520",
@@ -56,8 +51,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Anatomic Consideration"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "92521",
@@ -66,8 +60,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "92522",
@@ -76,8 +69,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "92523",
@@ -86,8 +78,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "92524",
@@ -96,8 +87,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "92526",
@@ -106,8 +96,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Anatomic Consideration"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "92597",
@@ -116,8 +105,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Nature of Service/Procedure"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "92607",
@@ -126,8 +114,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Nature of Service/Procedure"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "92608",
@@ -136,8 +123,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "92609",
@@ -146,8 +132,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Nature of Service/Procedure"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "92610",
@@ -156,8 +141,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Anatomic Consideration"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "92611",
@@ -166,8 +150,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Nature of Service/Procedure"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "92612",
@@ -176,8 +159,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Nature of Service/Procedure"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "92614",
@@ -186,8 +168,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Nature of Service/Procedure"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "92616",
@@ -196,8 +177,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Nature of Service/Procedure"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "93797",
@@ -206,8 +186,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "CMS Policy"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "93798",
@@ -216,8 +195,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "CMS Policy"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "95851",
@@ -226,8 +204,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "95852",
@@ -236,8 +213,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "95992",
@@ -246,8 +222,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "96000",
@@ -256,8 +231,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "96001",
@@ -266,8 +240,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "96002",
@@ -276,8 +249,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Nature of Service/Procedure"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "96105",
@@ -286,8 +258,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "96125",
@@ -296,8 +267,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97010",
@@ -306,8 +276,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "CMS Policy"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97012",
@@ -316,8 +285,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97016",
@@ -326,8 +294,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97018",
@@ -336,8 +303,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97022",
@@ -346,8 +312,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97024",
@@ -356,8 +321,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97026",
@@ -366,8 +330,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97028",
@@ -376,8 +339,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97032",
@@ -386,8 +348,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97033",
@@ -396,8 +357,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97034",
@@ -406,8 +366,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97035",
@@ -416,8 +375,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97036",
@@ -426,8 +384,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97039",
@@ -436,8 +393,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97110",
@@ -446,8 +402,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97112",
@@ -456,8 +411,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97113",
@@ -466,8 +420,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97116",
@@ -476,8 +429,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97124",
@@ -486,8 +438,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97129",
@@ -496,8 +447,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97130",
@@ -506,8 +456,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97139",
@@ -516,8 +465,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: CMS Workgroup"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97140",
@@ -526,8 +474,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97150",
@@ -536,8 +483,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97161",
@@ -546,8 +492,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "CMS Policy"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97162",
@@ -556,8 +501,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "CMS Policy"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97163",
@@ -566,8 +510,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "CMS Policy"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97164",
@@ -576,8 +519,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "CMS Policy"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97165",
@@ -586,8 +528,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "CMS Policy"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97166",
@@ -596,8 +537,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "CMS Policy"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97167",
@@ -606,8 +546,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "CMS Policy"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97168",
@@ -616,8 +555,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "CMS Policy"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97530",
@@ -626,8 +564,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97533",
@@ -636,8 +573,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97535",
@@ -646,8 +582,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97537",
@@ -656,8 +591,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97542",
@@ -666,8 +600,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97545",
@@ -676,8 +609,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97546",
@@ -686,8 +618,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97550",
@@ -696,8 +627,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97551",
@@ -706,8 +636,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Nature of Service/Procedure"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97552",
@@ -716,8 +645,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97597",
@@ -726,8 +654,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Nature of Service/Procedure"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97598",
@@ -736,8 +663,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Nature of Service/Procedure"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97602",
@@ -746,8 +672,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "CMS Policy"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97605",
@@ -756,8 +681,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Nature of Service/Procedure"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97606",
@@ -766,8 +690,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Nature of Service/Procedure"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97607",
@@ -776,8 +699,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Nature of Service/Procedure"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97608",
@@ -786,8 +708,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Nature of Service/Procedure"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97610",
@@ -796,8 +717,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "97750",
@@ -806,8 +726,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97755",
@@ -816,8 +735,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97760",
@@ -826,8 +744,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97761",
@@ -836,8 +753,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97763",
@@ -846,8 +762,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": true
+        }
     },
     {
         "cpt_code": "97799",
@@ -856,8 +771,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "98966",
@@ -866,8 +780,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "98967",
@@ -876,8 +789,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "98968",
@@ -886,8 +798,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "98970",
@@ -896,8 +807,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "98971",
@@ -906,8 +816,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "98972",
@@ -916,8 +825,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "98975",
@@ -926,8 +834,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "98976",
@@ -936,8 +843,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "98977",
@@ -946,8 +852,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "98979",
@@ -956,8 +861,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "98980",
@@ -966,8 +870,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "98981",
@@ -976,8 +879,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Nature of Service/Procedure"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "98984",
@@ -986,8 +888,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "98985",
@@ -996,8 +897,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "G0281",
@@ -1006,8 +906,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "G0283",
@@ -1016,8 +915,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "G0329",
@@ -1026,8 +924,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "G0451",
@@ -1036,8 +933,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Clinical: Data"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "G0541",
@@ -1046,8 +942,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "G0542",
@@ -1056,8 +951,7 @@
             "adjudication": 3,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "G0543",
@@ -1066,8 +960,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "G2250",
@@ -1076,8 +969,7 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     },
     {
         "cpt_code": "G2251",
@@ -1086,7 +978,6 @@
             "adjudication": 2,
             "adjudication_level": "date-of-service",
             "description": "Code Descriptor / CPT Instruction"
-        },
-        "isTimed": false
+        }
     }
 ]

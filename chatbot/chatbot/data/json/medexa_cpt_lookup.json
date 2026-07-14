@@ -1,0 +1,2746 @@
+{
+    "_meta": {
+      "file": "medexa_cpt_lookup.json",
+      "version": "2.1.0",
+      "date": "2026-07",
+      "match_strategy": "exact_phrase_match_on_normalized_transcript",
+      "context_rules": {
+        "trigger_phrases": "Exact phrase must appear in normalized transcript segment",
+        "required_context": "At least ONE of these clinically-specific action words must appear within 10 tokens of the matched phrase. Generic words like 'patient', 'session', 'treatment' are excluded \u2014 they fire on everything.",
+        "exclude_if_present": "If any of these appear in the same sentence as the match, suppress the code."
+      },
+      "change_log": "v2.0.0: Extended to cover every code in cpt_general_info.json (98 codes total). Removed 26 codes with no corresponding entry in cpt_general_info.json (ABA/BCBA codes, acupuncture, athletic training evaluations, and other out-of-scope codes). Added 39 new entries (SLP swallowing/AAC/voice codes, biofeedback, cardiac rehab, ROM measurement, motion analysis, telephone/online digital check-ins, remote therapeutic monitoring, caregiver direct-care G-codes, and wound e-stim/electromagnetic G-codes), with abbreviated cpt_general_info.json descriptions expanded to full CPT/HCPCS long descriptors. Fixed dangling ncci_conflicts/notes references left by removed codes (97032, 97129, 97545, 97597). | v2.1.0: Expanded trigger_phrases for all 86 actively-matched codes (12 engine-selected/add-on tier codes intentionally left empty) with additional natural-language, colloquial, and clinical-shorthand variants to improve real-world transcript matching."
+    },
+    "90901": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "biofeedback training",
+        "biofeedback therapy",
+        "biofeedback session",
+        "emg biofeedback",
+        "surface emg biofeedback",
+        "heart rate variability biofeedback",
+        "thermal biofeedback",
+        "biofeedback",
+        "did biofeedback",
+        "biofeedback modality",
+        "respiratory biofeedback",
+        "relaxation biofeedback",
+        "muscle re-education biofeedback",
+        "hrv biofeedback"
+      ],
+      "ncci_conflicts": [
+        "90912"
+      ],
+      "notes": "Any modality except perineal/anorectal/urethral (use 90912 for pelvic floor). Untimed, per-day code \u2014 bill once regardless of session length.",
+      "code": "90901",
+      "exclude_if_present": [
+        "perineal",
+        "anorectal",
+        "urethral",
+        "pelvic floor",
+        "plan to"
+      ],
+      "label": "Biofeedback Training - Any Modality",
+      "required_context": [
+        "worked on",
+        "did",
+        "completed"
+      ]
+    },
+    "90912": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "pelvic floor biofeedback",
+        "perineal biofeedback",
+        "anorectal biofeedback",
+        "urethral sphincter biofeedback",
+        "biofeedback for incontinence",
+        "pelvic floor muscle biofeedback training",
+        "pelvic floor muscle retraining with biofeedback",
+        "biofeedback for urinary incontinence",
+        "biofeedback for fecal incontinence",
+        "anal sphincter biofeedback",
+        "kegel biofeedback",
+        "manometric biofeedback",
+        "rectal biofeedback",
+        "bladder retraining biofeedback"
+      ],
+      "ncci_conflicts": [
+        "90901"
+      ],
+      "notes": "Perineal/anorectal/urethral biofeedback only, includes EMG and/or manometry when performed. First 15 min of one-on-one contact.",
+      "code": "90912",
+      "exclude_if_present": [
+        "plan to",
+        "will add"
+      ],
+      "label": "Biofeedback Training - Perineal/Anorectal/Urethral (Initial 15 min)",
+      "required_context": [
+        "worked on",
+        "did",
+        "completed"
+      ]
+    },
+    "92507": {
+      "disciplines": [
+        "SLP"
+      ],
+      "trigger_phrases": [
+        "speech therapy",
+        "language therapy",
+        "voice treatment",
+        "articulation therapy",
+        "apraxia treatment",
+        "dysarthria treatment",
+        "stuttering treatment",
+        "fluency treatment",
+        "aphasia treatment",
+        "cognitive communication treatment",
+        "lsvt",
+        "lee silverman voice treatment",
+        "speech language treatment",
+        "worked on articulation",
+        "articulation drills",
+        "speech sound production practice",
+        "worked on speech intelligibility",
+        "vocal hygiene education",
+        "accent modification therapy",
+        "apraxia of speech treatment",
+        "social communication treatment",
+        "pragmatic language treatment",
+        "expressive language therapy",
+        "receptive language therapy",
+        "auditory processing therapy",
+        "fluency shaping therapy",
+        "stuttering modification therapy"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Core SLP individual treatment code.",
+      "code": "92507",
+      "exclude_if_present": [
+        "group",
+        "evaluated",
+        "assessment",
+        "plan to"
+      ],
+      "label": "Speech / Language Treatment - Individual",
+      "required_context": [
+        "worked on"
+      ]
+    },
+    "92508": {
+      "disciplines": [
+        "SLP"
+      ],
+      "trigger_phrases": [
+        "group speech therapy",
+        "speech group treatment",
+        "group language therapy",
+        "speech therapy group",
+        "language group session",
+        "group articulation therapy",
+        "group aphasia therapy",
+        "group voice therapy",
+        "small group speech session"
+      ],
+      "ncci_conflicts": [],
+      "code": "92508",
+      "exclude_if_present": [
+        "individual"
+      ],
+      "label": "Speech / Language Treatment - Group",
+      "required_context": [
+        "group",
+        "patients"
+      ]
+    },
+    "92520": {
+      "disciplines": [
+        "SLP"
+      ],
+      "trigger_phrases": [
+        "laryngeal function study",
+        "laryngeal function studies",
+        "aerodynamic voice testing",
+        "acoustic voice testing",
+        "voice aerodynamic testing",
+        "laryngeal function testing",
+        "laryngeal function test",
+        "voice function study",
+        "vocal function study",
+        "phonatory function testing"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Aerodynamic testing and acoustic testing of laryngeal/vocal function, combined under one code.",
+      "code": "92520",
+      "exclude_if_present": [
+        "plan to",
+        "will schedule"
+      ],
+      "label": "Laryngeal Function Studies (Aerodynamic & Acoustic Testing)",
+      "required_context": [
+        "performed",
+        "administered",
+        "completed"
+      ]
+    },
+    "92521": {
+      "disciplines": [
+        "SLP"
+      ],
+      "trigger_phrases": [
+        "fluency evaluation",
+        "stuttering evaluation",
+        "cluttering evaluation",
+        "speech fluency evaluation",
+        "stutter evaluation",
+        "fluency assessment",
+        "dysfluency evaluation",
+        "stammering evaluation"
+      ],
+      "ncci_conflicts": [],
+      "code": "92521",
+      "exclude_if_present": [
+        "treatment",
+        "therapy",
+        "plan to"
+      ],
+      "label": "Speech Fluency Evaluation",
+      "required_context": [
+        "evaluated",
+        "assessment",
+        "administered"
+      ]
+    },
+    "92522": {
+      "disciplines": [
+        "SLP"
+      ],
+      "trigger_phrases": [
+        "speech sound evaluation",
+        "articulation evaluation",
+        "phonological evaluation",
+        "apraxia evaluation",
+        "dysarthria evaluation",
+        "speech production evaluation",
+        "articulation assessment",
+        "phonological process evaluation",
+        "motor speech evaluation",
+        "speech sound disorder evaluation",
+        "intelligibility evaluation"
+      ],
+      "ncci_conflicts": [
+        "92523"
+      ],
+      "code": "92522",
+      "exclude_if_present": [
+        "treatment",
+        "therapy",
+        "plan to"
+      ],
+      "label": "Speech Sound Evaluation",
+      "required_context": [
+        "evaluated",
+        "assessment",
+        "administered"
+      ]
+    },
+    "92523": {
+      "disciplines": [
+        "SLP"
+      ],
+      "trigger_phrases": [
+        "comprehensive speech language evaluation",
+        "speech language evaluation",
+        "speech language assessment",
+        "articulation and language evaluation",
+        "combined speech and language evaluation",
+        "speech and language assessment"
+      ],
+      "ncci_conflicts": [
+        "92522"
+      ],
+      "code": "92523",
+      "exclude_if_present": [
+        "treatment",
+        "therapy",
+        "plan to"
+      ],
+      "label": "Speech Sound + Language Evaluation",
+      "required_context": [
+        "evaluated",
+        "assessment",
+        "administered"
+      ]
+    },
+    "92524": {
+      "disciplines": [
+        "SLP"
+      ],
+      "trigger_phrases": [
+        "voice evaluation",
+        "resonance evaluation",
+        "voice quality assessment",
+        "vocal quality evaluation",
+        "voice assessment",
+        "resonance assessment",
+        "perceptual voice evaluation",
+        "hypernasality evaluation",
+        "hyponasality evaluation"
+      ],
+      "ncci_conflicts": [],
+      "code": "92524",
+      "exclude_if_present": [
+        "voice treatment",
+        "plan to"
+      ],
+      "label": "Voice and Resonance Evaluation",
+      "required_context": [
+        "evaluated",
+        "assessment"
+      ]
+    },
+    "92526": {
+      "disciplines": [
+        "SLP",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "swallowing treatment",
+        "dysphagia treatment",
+        "oral motor treatment",
+        "feeding therapy",
+        "swallowing therapy",
+        "dysphagia therapy",
+        "oral feeding treatment",
+        "oral motor therapy",
+        "feeding treatment",
+        "swallowing exercises",
+        "dysphagia exercises",
+        "oral sensorimotor treatment",
+        "compensatory swallow strategy training",
+        "swallow strategy training",
+        "bolus modification training",
+        "chin tuck training",
+        "effortful swallow training"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Treatment only \u2014 not swallowing evaluation.",
+      "code": "92526",
+      "exclude_if_present": [
+        "evaluated",
+        "swallowing evaluation",
+        "mbss",
+        "mbs",
+        "fees"
+      ],
+      "label": "Swallowing / Oral Function Treatment",
+      "required_context": []
+    },
+    "92597": {
+      "disciplines": [
+        "SLP"
+      ],
+      "trigger_phrases": [
+        "voice prosthetic evaluation",
+        "voice prosthesis evaluation",
+        "electrolarynx evaluation",
+        "tracheoesophageal voice prosthesis evaluation",
+        "speaking valve evaluation",
+        "voice prosthesis fitting",
+        "tep evaluation",
+        "tracheoesophageal puncture evaluation",
+        "artificial larynx evaluation",
+        "prosthesis assessment for speech"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Evaluation/fitting only, no therapeutic component. Distinct from 92609 (device programming/training).",
+      "code": "92597",
+      "exclude_if_present": [
+        "treatment",
+        "training",
+        "plan to"
+      ],
+      "label": "Voice Prosthetic Device Evaluation",
+      "required_context": [
+        "evaluated",
+        "assessed",
+        "fitted"
+      ]
+    },
+    "92607": {
+      "disciplines": [
+        "SLP"
+      ],
+      "trigger_phrases": [
+        "aac evaluation",
+        "speech generating device evaluation",
+        "sgd evaluation",
+        "augmentative communication evaluation",
+        "aac device evaluation",
+        "communication device evaluation",
+        "high tech aac evaluation",
+        "low tech aac evaluation",
+        "speech generating device assessment"
+      ],
+      "ncci_conflicts": [],
+      "notes": "First hour, face-to-face. Add-on 92608 for each additional 30 min. Distinct from 92609 (training/programming).",
+      "code": "92607",
+      "exclude_if_present": [
+        "training",
+        "programming",
+        "plan to"
+      ],
+      "label": "AAC / Speech-Generating Device Evaluation - First Hour",
+      "required_context": [
+        "evaluated",
+        "assessed"
+      ]
+    },
+    "92608": {
+      "disciplines": [
+        "SLP"
+      ],
+      "trigger_phrases": [],
+      "ncci_conflicts": [],
+      "notes": "Engine-generated add-on when 92607 evaluation exceeds the first hour. Do not match from speech.",
+      "code": "92608",
+      "label": "AAC / Speech-Generating Device Evaluation - Each Add'l 30 min"
+    },
+    "92609": {
+      "disciplines": [
+        "SLP"
+      ],
+      "trigger_phrases": [
+        "aac training",
+        "aac device programming",
+        "speech generating device training",
+        "sgd programming",
+        "aac device modification",
+        "augmentative communication training",
+        "aac device setup",
+        "communication device training",
+        "device vocabulary programming",
+        "aac trial",
+        "aac device trial"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Ongoing therapeutic use/programming of an AAC device \u2014 not the initial evaluation.",
+      "code": "92609",
+      "exclude_if_present": [
+        "evaluation",
+        "evaluated",
+        "plan to"
+      ],
+      "label": "AAC / Speech-Generating Device Therapeutic Services",
+      "required_context": [
+        "worked on",
+        "programmed",
+        "trained"
+      ]
+    },
+    "92610": {
+      "disciplines": [
+        "SLP"
+      ],
+      "trigger_phrases": [
+        "swallowing evaluation",
+        "dysphagia evaluation",
+        "clinical swallow evaluation",
+        "bedside swallow evaluation",
+        "oral and pharyngeal swallowing evaluation",
+        "clinical swallow exam",
+        "bedside swallow exam",
+        "clinical swallowing examination"
+      ],
+      "ncci_conflicts": [
+        "92611"
+      ],
+      "notes": "Clinical/bedside swallow evaluation, no instrumentation. Should not be billed same day as 92611.",
+      "code": "92610",
+      "exclude_if_present": [
+        "treatment",
+        "therapy",
+        "mbss",
+        "fees",
+        "plan to"
+      ],
+      "label": "Swallowing Function Evaluation - Clinical/Bedside",
+      "required_context": [
+        "evaluated",
+        "assessed"
+      ]
+    },
+    "92611": {
+      "disciplines": [
+        "SLP"
+      ],
+      "trigger_phrases": [
+        "modified barium swallow study",
+        "mbss",
+        "videofluoroscopic swallow study",
+        "motion fluoroscopy swallow",
+        "barium swallow study",
+        "video swallow study",
+        "vfss",
+        "modified barium swallow",
+        "swallow study with barium"
+      ],
+      "ncci_conflicts": [
+        "92610"
+      ],
+      "notes": "Fluoroscopic/radiology-based swallow study. Radiology component (74230) billed separately.",
+      "code": "92611",
+      "exclude_if_present": [
+        "plan to",
+        "will schedule"
+      ],
+      "label": "Swallowing Evaluation - Motion Fluoroscopy (MBSS)",
+      "required_context": [
+        "performed",
+        "completed"
+      ]
+    },
+    "92612": {
+      "disciplines": [
+        "SLP",
+        "MD"
+      ],
+      "trigger_phrases": [
+        "fees",
+        "flexible endoscopic evaluation of swallowing",
+        "endoscopic swallow study",
+        "fiberoptic endoscopic evaluation of swallowing",
+        "fiberoptic endoscopic swallow exam",
+        "nasoendoscopic swallow evaluation",
+        "endoscopic evaluation of swallowing"
+      ],
+      "ncci_conflicts": [
+        "92616"
+      ],
+      "notes": "FEES only, no laryngeal sensory testing. If combined with sensory testing in the same session, bill 92616 instead of stacking 92612 + 92614.",
+      "code": "92612",
+      "exclude_if_present": [
+        "sensory testing",
+        "laryngeal sensory",
+        "plan to"
+      ],
+      "label": "Swallowing Evaluation - Flexible Endoscopic (FEES)",
+      "required_context": [
+        "performed",
+        "completed"
+      ]
+    },
+    "92614": {
+      "disciplines": [
+        "SLP",
+        "MD"
+      ],
+      "trigger_phrases": [
+        "laryngeal sensory testing",
+        "flexible endoscopic laryngeal sensory testing",
+        "fees laryngeal sensory testing",
+        "laryngopharyngeal sensory testing",
+        "endoscopic sensory testing"
+      ],
+      "ncci_conflicts": [
+        "92616"
+      ],
+      "notes": "Laryngeal sensory testing only, without a swallowing evaluation. If combined with FEES, bill 92616.",
+      "code": "92614",
+      "exclude_if_present": [
+        "swallowing",
+        "plan to"
+      ],
+      "label": "Flexible Endoscopic Laryngeal Sensory Testing",
+      "required_context": [
+        "performed",
+        "completed"
+      ]
+    },
+    "92616": {
+      "disciplines": [
+        "SLP",
+        "MD"
+      ],
+      "trigger_phrases": [
+        "feest",
+        "fees with sensory testing",
+        "flexible endoscopic evaluation of swallowing and laryngeal sensory testing",
+        "combined fees and sensory testing",
+        "endoscopic swallow and sensory evaluation",
+        "combined endoscopic swallowing and sensory study"
+      ],
+      "ncci_conflicts": [
+        "92612",
+        "92614"
+      ],
+      "notes": "Combined FEES + laryngeal sensory testing, same session. Do not stack with 92612/92614.",
+      "code": "92616",
+      "exclude_if_present": [
+        "plan to"
+      ],
+      "label": "Swallowing Evaluation with Laryngeal Sensory Testing (FEES + FEEST)",
+      "required_context": [
+        "performed",
+        "completed"
+      ]
+    },
+    "93797": {
+      "disciplines": [
+        "MD",
+        "DO",
+        "NP",
+        "PA"
+      ],
+      "trigger_phrases": [
+        "cardiac rehabilitation session",
+        "outpatient cardiac rehab",
+        "cardiac rehab without ecg",
+        "cardiac rehabilitation without monitoring",
+        "cardiac rehab visit",
+        "phase 2 cardiac rehab",
+        "cardiac rehabilitation exercise session"
+      ],
+      "ncci_conflicts": [
+        "93798"
+      ],
+      "notes": "Physician/QHP outpatient cardiac rehab services, no continuous ECG monitoring, per session. Not PT/OT/SLP \u2014 flag if detected in a rehab therapy session context.",
+      "code": "93797",
+      "exclude_if_present": [
+        "with ecg",
+        "continuous ecg",
+        "telemetry",
+        "monitored"
+      ],
+      "label": "Cardiac Rehabilitation - Without Continuous ECG Monitoring",
+      "required_context": [
+        "session",
+        "completed"
+      ]
+    },
+    "93798": {
+      "disciplines": [
+        "MD",
+        "DO",
+        "NP",
+        "PA"
+      ],
+      "trigger_phrases": [
+        "cardiac rehabilitation with ecg monitoring",
+        "monitored cardiac rehab",
+        "cardiac rehab with telemetry",
+        "cardiac rehabilitation with continuous ecg",
+        "monitored cardiac rehab visit",
+        "telemetry cardiac rehab session"
+      ],
+      "ncci_conflicts": [
+        "93797"
+      ],
+      "notes": "With continuous ECG/telemetry monitoring, per session. Not PT/OT/SLP \u2014 flag if detected in a rehab therapy session context.",
+      "code": "93798",
+      "exclude_if_present": [
+        "without ecg",
+        "no telemetry",
+        "no monitoring"
+      ],
+      "label": "Cardiac Rehabilitation - With Continuous ECG Monitoring",
+      "required_context": [
+        "session",
+        "completed"
+      ]
+    },
+    "95851": {
+      "disciplines": [
+        "PT",
+        "OT",
+        "MD"
+      ],
+      "trigger_phrases": [
+        "range of motion measurement and report",
+        "goniometric measurement",
+        "formal rom measurement",
+        "extremity range of motion measurement",
+        "trunk range of motion measurement",
+        "goniometry",
+        "formal goniometric assessment",
+        "documented range of motion measurement"
+      ],
+      "ncci_conflicts": [
+        "95852"
+      ],
+      "notes": "Formal, reportable ROM measurement (separate procedure) for an extremity (excluding hand) or trunk section. Distinct from routine ROM assessed as part of an evaluation.",
+      "code": "95851",
+      "exclude_if_present": [
+        "hand",
+        "finger",
+        "plan to"
+      ],
+      "label": "Range of Motion Measurement - Extremity/Trunk",
+      "required_context": [
+        "measured",
+        "documented"
+      ]
+    },
+    "95852": {
+      "disciplines": [
+        "PT",
+        "OT",
+        "MD"
+      ],
+      "trigger_phrases": [
+        "hand range of motion measurement",
+        "hand rom measurement",
+        "finger range of motion measurement",
+        "hand goniometry",
+        "finger goniometry"
+      ],
+      "ncci_conflicts": [
+        "95851"
+      ],
+      "notes": "Formal, reportable ROM measurement (separate procedure) for the hand only.",
+      "code": "95852",
+      "exclude_if_present": [
+        "plan to"
+      ],
+      "label": "Range of Motion Measurement - Hand",
+      "required_context": [
+        "measured",
+        "documented"
+      ]
+    },
+    "95992": {
+      "disciplines": [
+        "PT",
+        "OT",
+        "MD"
+      ],
+      "trigger_phrases": [
+        "canalith repositioning",
+        "epley maneuver",
+        "semont maneuver",
+        "bppv treatment",
+        "particle repositioning maneuver",
+        "bppv maneuver",
+        "repositioning maneuver for vertigo",
+        "otolith repositioning maneuver"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Per day, untimed. For benign paroxysmal positional vertigo (BPPV).",
+      "code": "95992",
+      "exclude_if_present": [
+        "plan to",
+        "will perform"
+      ],
+      "label": "Canalith Repositioning Procedure",
+      "required_context": [
+        "performed",
+        "completed"
+      ]
+    },
+    "96000": {
+      "disciplines": [
+        "PT",
+        "OT",
+        "MD"
+      ],
+      "trigger_phrases": [
+        "3d motion analysis",
+        "computerized gait analysis",
+        "video motion analysis",
+        "3d kinematic analysis",
+        "motion capture analysis",
+        "instrumented gait analysis",
+        "quantitative motion analysis",
+        "3d gait analysis"
+      ],
+      "ncci_conflicts": [
+        "96001"
+      ],
+      "notes": "Video-taping and 3-D kinematics only. If dynamic plantar pressure measurement is also performed, bill 96001 instead.",
+      "code": "96000",
+      "exclude_if_present": [
+        "foot pressure",
+        "plantar pressure",
+        "plan to"
+      ],
+      "label": "Comprehensive Motion Analysis - Video/3D Kinematics",
+      "required_context": [
+        "performed",
+        "completed"
+      ]
+    },
+    "96001": {
+      "disciplines": [
+        "PT",
+        "OT",
+        "MD"
+      ],
+      "trigger_phrases": [
+        "motion analysis with foot pressure",
+        "plantar pressure gait analysis",
+        "dynamic plantar pressure measurement",
+        "pedobarographic gait analysis",
+        "instrumented gait analysis with foot pressure",
+        "plantar pressure gait study"
+      ],
+      "ncci_conflicts": [
+        "96000"
+      ],
+      "notes": "3-D kinematics plus dynamic plantar pressure measurements during walking.",
+      "code": "96001",
+      "exclude_if_present": [
+        "plan to"
+      ],
+      "label": "Comprehensive Motion Analysis - With Dynamic Plantar Pressure",
+      "required_context": [
+        "performed",
+        "completed"
+      ]
+    },
+    "96002": {
+      "disciplines": [
+        "PT",
+        "OT",
+        "MD"
+      ],
+      "trigger_phrases": [
+        "dynamic surface emg",
+        "dynamic emg during walking",
+        "surface emg during gait",
+        "functional activity emg",
+        "dynamic gait emg",
+        "functional emg during gait"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Dynamic surface EMG during walking or other functional activities, 1-12 muscles.",
+      "code": "96002",
+      "exclude_if_present": [
+        "plan to"
+      ],
+      "label": "Dynamic Surface EMG - Walking/Functional Activities",
+      "required_context": [
+        "performed",
+        "completed"
+      ]
+    },
+    "96105": {
+      "disciplines": [
+        "SLP"
+      ],
+      "trigger_phrases": [
+        "aphasia assessment",
+        "aphasia evaluation",
+        "boston diagnostic aphasia examination",
+        "aphasia testing",
+        "western aphasia battery",
+        "aphasia battery testing"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Per hour, includes interpretation and report time (e.g., Boston Diagnostic Aphasia Examination).",
+      "code": "96105",
+      "exclude_if_present": [
+        "treatment",
+        "therapy",
+        "plan to"
+      ],
+      "label": "Aphasia Assessment",
+      "required_context": [
+        "evaluated",
+        "assessed",
+        "administered"
+      ]
+    },
+    "96125": {
+      "disciplines": [
+        "SLP",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "cognitive performance testing",
+        "standardized cognitive test",
+        "ross information processing assessment",
+        "cognitive testing with report",
+        "standardized cognitive assessment",
+        "neurocognitive testing with report",
+        "cognitive linguistic testing"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Per hour, includes face-to-face administration plus scoring/report time.",
+      "code": "96125",
+      "exclude_if_present": [
+        "treatment",
+        "therapy",
+        "plan to"
+      ],
+      "label": "Standardized Cognitive Performance Testing",
+      "required_context": [
+        "evaluated",
+        "assessed",
+        "administered"
+      ]
+    },
+    "97010": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "hot pack",
+        "cold pack",
+        "hydrocollator",
+        "ice pack",
+        "moist heat pack",
+        "cryotherapy pack",
+        "superficial heat",
+        "ice wrap",
+        "heat pack",
+        "therapeutic heat",
+        "cryotherapy",
+        "ice therapy"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Unattended modality. Flat per-session. No timer.",
+      "code": "97010",
+      "exclude_if_present": [
+        "plan to",
+        "will apply",
+        "ice at home"
+      ],
+      "label": "Hot / Cold Packs",
+      "required_context": [
+        "applied",
+        "placed"
+      ]
+    },
+    "97012": {
+      "disciplines": [
+        "PT"
+      ],
+      "trigger_phrases": [
+        "mechanical traction",
+        "cervical traction",
+        "lumbar traction",
+        "spinal traction",
+        "spinal decompression",
+        "intermittent traction",
+        "traction table",
+        "pelvic traction",
+        "mechanical spinal traction"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Mechanical only. Manual traction = 97140.",
+      "code": "97012",
+      "exclude_if_present": [
+        "manual traction",
+        "plan to",
+        "will apply"
+      ],
+      "label": "Mechanical Traction",
+      "required_context": [
+        "applied",
+        "set up"
+      ]
+    },
+    "97016": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "vasopneumatic compression",
+        "pneumatic compression pump",
+        "lymphedema pump",
+        "sequential compression device",
+        "compression pump therapy",
+        "jobst pump",
+        "lymphedema compression pump"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Edema management. Flat per session.",
+      "code": "97016",
+      "exclude_if_present": [
+        "plan to",
+        "will apply"
+      ],
+      "label": "Vasopneumatic Compression",
+      "required_context": [
+        "applied",
+        "set up"
+      ]
+    },
+    "97018": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "paraffin bath",
+        "paraffin wax treatment",
+        "paraffin dip",
+        "paraffin treatment",
+        "wax bath therapy"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Hand arthritis primary use. Flat.",
+      "code": "97018",
+      "exclude_if_present": [
+        "plan to"
+      ],
+      "label": "Paraffin Bath",
+      "required_context": [
+        "applied"
+      ]
+    },
+    "97022": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "whirlpool",
+        "hydrotherapy tank",
+        "whirlpool treatment",
+        "aquatic whirlpool treatment",
+        "whirlpool bath"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Do not confuse with 97036 Hubbard tank.",
+      "code": "97022",
+      "exclude_if_present": [
+        "hubbard tank",
+        "plan to"
+      ],
+      "label": "Whirlpool",
+      "required_context": [
+        "placed"
+      ]
+    },
+    "97024": {
+      "disciplines": [
+        "PT"
+      ],
+      "trigger_phrases": [
+        "diathermy",
+        "shortwave diathermy",
+        "microwave diathermy",
+        "deep heat diathermy"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Deep heating. Flat.",
+      "code": "97024",
+      "exclude_if_present": [
+        "plan to"
+      ],
+      "label": "Diathermy",
+      "required_context": [
+        "applied"
+      ]
+    },
+    "97026": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "infrared therapy",
+        "near infrared therapy",
+        "infrared lamp",
+        "infrared light therapy",
+        "infrared heat lamp"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Unattended. Flat.",
+      "code": "97026",
+      "exclude_if_present": [
+        "plan to",
+        "laser"
+      ],
+      "label": "Infrared Therapy",
+      "required_context": [
+        "applied"
+      ]
+    },
+    "97028": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "ultraviolet therapy",
+        "uv therapy",
+        "uv light treatment",
+        "uv lamp treatment"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Primarily wound care. Flat.",
+      "code": "97028",
+      "exclude_if_present": [
+        "plan to"
+      ],
+      "label": "Ultraviolet Therapy",
+      "required_context": [
+        "applied"
+      ]
+    },
+    "97032": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "electrical stimulation manual",
+        "e-stim attended",
+        "nmes",
+        "neuromuscular electrical stimulation",
+        "functional electrical stimulation",
+        "attended electrical stimulation",
+        "e-stim attended manual",
+        "russian stimulation",
+        "electrical muscle stimulation manual"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Therapist must be present and engaged throughout. Attended stim only \u2014 unattended stim is not separately reimbursable in this schema.",
+      "code": "97032",
+      "exclude_if_present": [
+        "unattended",
+        "tens"
+      ],
+      "label": "Electrical Stimulation - Attended (Manual)",
+      "required_context": [
+        "applied",
+        "direct contact",
+        "therapist present"
+      ]
+    },
+    "97033": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "iontophoresis",
+        "ionic drug delivery",
+        "dexamethasone iontophoresis",
+        "acetic acid iontophoresis",
+        "iontophoresis treatment",
+        "transdermal drug delivery via iontophoresis"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Drug delivery via current. Timed attended modality.",
+      "code": "97033",
+      "exclude_if_present": [
+        "plan to"
+      ],
+      "label": "Iontophoresis",
+      "required_context": [
+        "applied"
+      ]
+    },
+    "97034": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "contrast baths",
+        "contrast bath treatment",
+        "hot cold water immersion",
+        "contrast bath therapy"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Alternating hot/cold immersion. Timed.",
+      "code": "97034",
+      "exclude_if_present": [
+        "plan to"
+      ],
+      "label": "Contrast Baths",
+      "required_context": []
+    },
+    "97035": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "therapeutic ultrasound",
+        "phonophoresis",
+        "ultrasound treatment",
+        "ultrasound therapy",
+        "ultrasound treatment session",
+        "therapeutic us"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Therapeutic only \u2014 not diagnostic imaging.",
+      "code": "97035",
+      "exclude_if_present": [
+        "diagnostic ultrasound",
+        "imaging",
+        "plan to"
+      ],
+      "label": "Ultrasound",
+      "required_context": [
+        "applied"
+      ]
+    },
+    "97036": {
+      "disciplines": [
+        "PT"
+      ],
+      "trigger_phrases": [
+        "hubbard tank",
+        "full body hydrotherapy",
+        "hubbard tank treatment",
+        "full body immersion hydrotherapy",
+        "hubbard tank bath"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Full-body tank. Timed. PT only.",
+      "code": "97036",
+      "exclude_if_present": [
+        "whirlpool"
+      ],
+      "label": "Hubbard Tank",
+      "required_context": []
+    },
+    "97039": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "unlisted modality",
+        "unlisted attended modality",
+        "unlisted modality treatment"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Catchall attended modality. Must specify in documentation.",
+      "code": "97039",
+      "exclude_if_present": [],
+      "label": "Unlisted Attended Modality",
+      "required_context": []
+    },
+    "97110": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "therapeutic exercise",
+        "therapeutic exercises",
+        "strengthening exercise",
+        "strengthening exercises",
+        "range of motion exercise",
+        "range of motion exercises",
+        "flexibility exercise",
+        "flexibility exercises",
+        "resistance exercise",
+        "resistance exercises",
+        "isometric exercise",
+        "isometric exercises",
+        "isotonic exercise",
+        "progressive resistance exercise",
+        "active range of motion exercise",
+        "passive range of motion exercise",
+        "active assisted range of motion",
+        "core stabilization exercise",
+        "ther ex",
+        "strengthening program",
+        "strength training",
+        "stretching exercises",
+        "core strengthening",
+        "endurance training exercise",
+        "resistive band exercise",
+        "weight training exercise"
+      ],
+      "ncci_conflicts": [
+        "97530"
+      ],
+      "notes": "Most common PT/OT timed code. Conflicts with 97530 on same body region \u2014 requires Mod 59.",
+      "code": "97110",
+      "exclude_if_present": [
+        "evaluated",
+        "re-evaluated",
+        "assessment",
+        "scheduled for",
+        "plan to",
+        "will order"
+      ],
+      "label": "Therapeutic Exercise",
+      "required_context": [
+        "working on",
+        "doing",
+        "started",
+        "completed",
+        "continued",
+        "we did"
+      ]
+    },
+    "97112": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "neuromuscular reeducation",
+        "neuromuscular re-education",
+        "neuromuscular retraining",
+        "balance training",
+        "coordination training",
+        "proprioception training",
+        "proprioceptive training",
+        "kinesthetic training",
+        "postural control training",
+        "motor control retraining",
+        "motor relearning",
+        "balance retraining",
+        "proprioceptive neuromuscular facilitation",
+        "pnf technique",
+        "postural retraining"
+      ],
+      "ncci_conflicts": [
+        "97530"
+      ],
+      "notes": "Focus on neuromuscular control, balance, proprioception.",
+      "code": "97112",
+      "exclude_if_present": [
+        "evaluated",
+        "assessment",
+        "plan to",
+        "will schedule"
+      ],
+      "label": "Neuromuscular Reeducation",
+      "required_context": [
+        "working on",
+        "doing",
+        "started"
+      ]
+    },
+    "97113": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "aquatic therapy",
+        "pool therapy",
+        "aquatic therapeutic exercise",
+        "hydrotherapy with exercise",
+        "water therapy",
+        "pool exercise therapy",
+        "aquatic exercise program"
+      ],
+      "ncci_conflicts": [
+        "97110"
+      ],
+      "notes": "Pool-based exercise. Cannot bill 97110 for same activities.",
+      "code": "97113",
+      "exclude_if_present": [
+        "whirlpool",
+        "hubbard"
+      ],
+      "label": "Aquatic Therapy",
+      "required_context": [
+        "pool"
+      ]
+    },
+    "97116": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "gait training",
+        "stair training",
+        "stair climbing training",
+        "ambulation training",
+        "walking training",
+        "gait correction",
+        "gait reeducation",
+        "gait retraining",
+        "gait pattern training",
+        "assistive device gait training",
+        "walker training",
+        "cane training",
+        "treadmill gait training"
+      ],
+      "ncci_conflicts": [
+        "97530"
+      ],
+      "notes": "Includes stair training. Must document gait deviation and goals.",
+      "code": "97116",
+      "exclude_if_present": [
+        "evaluated gait",
+        "gait assessment",
+        "assessed gait",
+        "plan to"
+      ],
+      "label": "Gait Training",
+      "required_context": [
+        "worked on"
+      ]
+    },
+    "97124": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "massage",
+        "therapeutic massage",
+        "effleurage",
+        "petrissage",
+        "tapotement",
+        "soft tissue massage",
+        "manual massage therapy",
+        "deep tissue massage",
+        "therapeutic soft tissue massage"
+      ],
+      "ncci_conflicts": [
+        "97140"
+      ],
+      "notes": "Cannot bill with 97140 same region same day without Mod 59.",
+      "code": "97124",
+      "exclude_if_present": [
+        "plan to",
+        "will do",
+        "myofascial release",
+        "iastm"
+      ],
+      "label": "Massage",
+      "required_context": [
+        "applied",
+        "did"
+      ]
+    },
+    "97129": {
+      "disciplines": [
+        "OT",
+        "SLP"
+      ],
+      "trigger_phrases": [
+        "cognitive intervention",
+        "cognitive therapy",
+        "attention training",
+        "memory training",
+        "executive function training",
+        "problem solving therapy",
+        "reasoning training",
+        "cognitive rehabilitation",
+        "pragmatic communication training",
+        "cognitive linguistic therapy",
+        "cognitive retraining",
+        "attention retraining",
+        "memory retraining",
+        "executive function retraining"
+      ],
+      "ncci_conflicts": [],
+      "notes": "OT/SLP only. Time-based code, billed in 15-minute increments per the 8-minute rule.",
+      "code": "97129",
+      "exclude_if_present": [
+        "evaluated",
+        "assessment",
+        "screened",
+        "plan to"
+      ],
+      "label": "Therapeutic Intervention - Cognitive Function (Initial 15 min)",
+      "required_context": [
+        "working on"
+      ]
+    },
+    "97139": {
+      "disciplines": [
+        "PT",
+        "OT",
+        "SLP"
+      ],
+      "trigger_phrases": [
+        "unlisted therapeutic procedure",
+        "unlisted therapeutic intervention"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Must specify procedure type in documentation.",
+      "code": "97139",
+      "exclude_if_present": [],
+      "label": "Unlisted Therapeutic Procedure",
+      "required_context": []
+    },
+    "97140": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "manual therapy",
+        "joint mobilization",
+        "joint manipulation",
+        "soft tissue mobilization",
+        "manual lymphatic drainage",
+        "manual traction",
+        "myofascial release",
+        "instrument assisted soft tissue mobilization",
+        "iastm",
+        "graston",
+        "spinal manipulation",
+        "thrust manipulation",
+        "mfr",
+        "myofascial release technique",
+        "trigger point release",
+        "manual mobilization technique"
+      ],
+      "ncci_conflicts": [
+        "97530",
+        "97110",
+        "97124"
+      ],
+      "notes": "Hands-on only. High audit risk \u2014 document specific technique and joint.",
+      "code": "97140",
+      "exclude_if_present": [
+        "plan to do",
+        "will perform",
+        "considering",
+        "evaluated"
+      ],
+      "label": "Manual Therapy",
+      "required_context": [
+        "applied",
+        "did",
+        "worked on",
+        "completed"
+      ]
+    },
+    "97150": {
+      "disciplines": [
+        "PT",
+        "OT",
+        "SLP"
+      ],
+      "trigger_phrases": [
+        "group therapy",
+        "group therapeutic exercise",
+        "group treatment",
+        "group therapeutic procedure",
+        "group session",
+        "group exercise session",
+        "small group therapeutic exercise"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Requires 2+ patients simultaneously. Cannot bill individual timed codes for same patient same block.",
+      "code": "97150",
+      "exclude_if_present": [
+        "individual",
+        "one on one",
+        "one-on-one"
+      ],
+      "label": "Therapeutic Procedure - Group",
+      "required_context": [
+        "group",
+        "patients",
+        "multiple patients",
+        "two patients",
+        "three patients"
+      ]
+    },
+    "97161": {
+      "disciplines": [
+        "PT"
+      ],
+      "trigger_phrases": [
+        "pt evaluation",
+        "physical therapy evaluation",
+        "pt initial evaluation",
+        "physical therapy initial evaluation",
+        "pt eval",
+        "initial pt evaluation",
+        "new physical therapy evaluation"
+      ],
+      "ncci_conflicts": [
+        "97162",
+        "97163"
+      ],
+      "notes": "PT eval only. Complexity tier selected by clinician \u2014 flag for clinician to confirm during review.",
+      "code": "97161",
+      "exclude_if_present": [
+        "re-evaluation",
+        "reeval",
+        "re-eval",
+        "follow up",
+        "ot evaluation",
+        "slp evaluation"
+      ],
+      "label": "PT Evaluation - Low Complexity",
+      "required_context": [
+        "evaluated",
+        "evaluation",
+        "initial",
+        "new patient",
+        "assessment"
+      ]
+    },
+    "97162": {
+      "disciplines": [
+        "PT"
+      ],
+      "trigger_phrases": [],
+      "ncci_conflicts": [
+        "97161",
+        "97163"
+      ],
+      "notes": "Do not match from speech. Clinician selects complexity level.",
+      "code": "97162",
+      "exclude_if_present": [],
+      "label": "PT Evaluation - Moderate Complexity",
+      "required_context": []
+    },
+    "97163": {
+      "disciplines": [
+        "PT"
+      ],
+      "trigger_phrases": [],
+      "ncci_conflicts": [
+        "97161",
+        "97162"
+      ],
+      "notes": "Do not match from speech. Clinician selects complexity level.",
+      "code": "97163",
+      "exclude_if_present": [],
+      "label": "PT Evaluation - High Complexity",
+      "required_context": []
+    },
+    "97164": {
+      "disciplines": [
+        "PT"
+      ],
+      "trigger_phrases": [
+        "pt re-evaluation",
+        "physical therapy re-evaluation",
+        "pt reeval",
+        "physical therapy reeval",
+        "pt re-eval",
+        "pt plan of care re-evaluation"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Must document significant clinical change. Cannot bill same day as initial eval.",
+      "code": "97164",
+      "exclude_if_present": [
+        "initial evaluation",
+        "new patient",
+        "ot re-evaluation"
+      ],
+      "label": "PT Re-Evaluation",
+      "required_context": [
+        "re-evaluation",
+        "reeval",
+        "re-eval",
+        "reassessment",
+        "established"
+      ]
+    },
+    "97165": {
+      "disciplines": [
+        "OT"
+      ],
+      "trigger_phrases": [
+        "ot evaluation",
+        "occupational therapy evaluation",
+        "ot initial evaluation",
+        "ot eval",
+        "initial ot evaluation",
+        "new occupational therapy evaluation"
+      ],
+      "ncci_conflicts": [
+        "97166",
+        "97167"
+      ],
+      "notes": "OT eval. Complexity tier confirmed by clinician during review.",
+      "code": "97165",
+      "exclude_if_present": [
+        "re-evaluation",
+        "reeval",
+        "pt evaluation",
+        "slp evaluation"
+      ],
+      "label": "OT Evaluation - Low Complexity",
+      "required_context": [
+        "evaluated",
+        "evaluation",
+        "initial",
+        "new patient",
+        "assessment"
+      ]
+    },
+    "97166": {
+      "disciplines": [
+        "OT"
+      ],
+      "trigger_phrases": [],
+      "ncci_conflicts": [
+        "97165",
+        "97167"
+      ],
+      "notes": "Do not match from speech. Clinician selects.",
+      "code": "97166",
+      "exclude_if_present": [],
+      "label": "OT Evaluation - Moderate Complexity",
+      "required_context": []
+    },
+    "97167": {
+      "disciplines": [
+        "OT"
+      ],
+      "trigger_phrases": [],
+      "ncci_conflicts": [
+        "97165",
+        "97166"
+      ],
+      "notes": "Do not match from speech. Clinician selects.",
+      "code": "97167",
+      "exclude_if_present": [],
+      "label": "OT Evaluation - High Complexity",
+      "required_context": []
+    },
+    "97168": {
+      "disciplines": [
+        "OT"
+      ],
+      "trigger_phrases": [
+        "ot re-evaluation",
+        "occupational therapy re-evaluation",
+        "ot reeval",
+        "ot re-eval",
+        "ot plan of care re-evaluation"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Must document plan of care change.",
+      "code": "97168",
+      "exclude_if_present": [
+        "initial",
+        "new patient",
+        "pt re-evaluation"
+      ],
+      "label": "OT Re-Evaluation",
+      "required_context": [
+        "re-evaluation",
+        "reeval",
+        "re-eval",
+        "reassessment",
+        "established"
+      ]
+    },
+    "97530": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "therapeutic activities",
+        "therapeutic activity",
+        "functional activity training",
+        "task specific training",
+        "functional mobility training",
+        "functional task training",
+        "transfer training",
+        "sit to stand training",
+        "dynamic activity training",
+        "functional movement training",
+        "functional movement",
+        "functional movements",
+        "lifting mechanics",
+        "dynamic squatting",
+        "ther act",
+        "functional reaching training",
+        "functional bending training",
+        "carrying task training"
+      ],
+      "ncci_conflicts": [
+        "97110",
+        "97112",
+        "97116",
+        "97140"
+      ],
+      "notes": "Functional task-based. Distinct from 97110 \u2014 must document functional goal, not isolated exercise.",
+      "code": "97530",
+      "exclude_if_present": [
+        "assessed",
+        "evaluation",
+        "plan to",
+        "will add"
+      ],
+      "label": "Therapeutic Activities",
+      "required_context": [
+        "worked on",
+        "doing",
+        "completed"
+      ]
+    },
+    "97533": {
+      "disciplines": [
+        "OT"
+      ],
+      "trigger_phrases": [
+        "sensory integration",
+        "sensory integrative technique",
+        "sensory processing training",
+        "sensory motor intervention",
+        "adaptive response training",
+        "sensory diet",
+        "sensory processing intervention",
+        "sensory based intervention"
+      ],
+      "ncci_conflicts": [],
+      "notes": "OT only. Primarily pediatric.",
+      "code": "97533",
+      "exclude_if_present": [
+        "assessed",
+        "evaluation",
+        "screened"
+      ],
+      "label": "Sensory Integrative Techniques",
+      "required_context": [
+        "worked on"
+      ]
+    },
+    "97535": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "adl training",
+        "self care training",
+        "home management training",
+        "activities of daily living training",
+        "compensatory strategy training",
+        "adaptive equipment training",
+        "meal preparation training",
+        "safety procedure training",
+        "dressing training",
+        "bathing training",
+        "grooming training",
+        "toileting training",
+        "home program training",
+        "dressing and grooming training",
+        "home safety training"
+      ],
+      "ncci_conflicts": [
+        "97530"
+      ],
+      "notes": "ADL and compensatory strategies. OT primary domain.",
+      "code": "97535",
+      "exclude_if_present": [
+        "evaluated",
+        "assessed",
+        "plan to",
+        "will order"
+      ],
+      "label": "Self-Care / Home Management Training",
+      "required_context": [
+        "worked on",
+        "trained"
+      ]
+    },
+    "97537": {
+      "disciplines": [
+        "OT"
+      ],
+      "trigger_phrases": [
+        "community reintegration training",
+        "work reintegration training",
+        "community mobility training",
+        "transportation training",
+        "money management training",
+        "vocational task training",
+        "shopping simulation",
+        "community task training",
+        "job task simulation",
+        "return to work training"
+      ],
+      "ncci_conflicts": [],
+      "notes": "OT only.",
+      "code": "97537",
+      "exclude_if_present": [
+        "assessed",
+        "plan to",
+        "will add"
+      ],
+      "label": "Community / Work Reintegration Training",
+      "required_context": [
+        "worked on"
+      ]
+    },
+    "97542": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "wheelchair management",
+        "wheelchair training",
+        "wheelchair propulsion training",
+        "power wheelchair training",
+        "pressure relief training",
+        "w/c training",
+        "wheelchair fitting",
+        "wheelchair skills training",
+        "wheelchair seating training"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Fitting, training, pressure relief education.",
+      "code": "97542",
+      "exclude_if_present": [
+        "assessed wheelchair",
+        "wheelchair assessment",
+        "plan to"
+      ],
+      "label": "Wheelchair Management Training",
+      "required_context": []
+    },
+    "97545": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "work hardening",
+        "work conditioning",
+        "industrial rehabilitation",
+        "work simulation",
+        "job specific conditioning",
+        "return to work program",
+        "job simulation program",
+        "return to work conditioning"
+      ],
+      "ncci_conflicts": [],
+      "notes": "First 2 hours (full block required).",
+      "code": "97545",
+      "exclude_if_present": [
+        "plan to start",
+        "will refer",
+        "assessed for"
+      ],
+      "label": "Work Hardening / Conditioning - Initial 2 Hours",
+      "required_context": [
+        "program"
+      ]
+    },
+    "97550": {
+      "disciplines": [
+        "PT",
+        "OT",
+        "SLP"
+      ],
+      "trigger_phrases": [
+        "caregiver training",
+        "caregiver instruction",
+        "family training",
+        "caregiver education",
+        "family caregiver training",
+        "caregiver strategy training",
+        "caregiver home program instruction",
+        "caregiver home exercise instruction",
+        "family caregiver education session"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Direct contact with CAREGIVER, not patient. First 30 min.",
+      "code": "97550",
+      "exclude_if_present": [
+        "patient trained",
+        "patient educated",
+        "group caregiver"
+      ],
+      "label": "Caregiver Training - First 30 Min",
+      "required_context": [
+        "caregiver",
+        "family",
+        "spouse",
+        "parent",
+        "trained",
+        "instructed",
+        "educated"
+      ]
+    },
+    "97552": {
+      "disciplines": [
+        "PT",
+        "OT",
+        "SLP"
+      ],
+      "trigger_phrases": [
+        "group caregiver training",
+        "multi-family caregiver training",
+        "caregiver group session",
+        "multi-family caregiver session"
+      ],
+      "ncci_conflicts": [],
+      "notes": "2+ caregiver sets simultaneously.",
+      "code": "97552",
+      "exclude_if_present": [
+        "individual caregiver"
+      ],
+      "label": "Caregiver Training - Group",
+      "required_context": [
+        "group",
+        "multiple families",
+        "caregivers"
+      ]
+    },
+    "97597": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "wound debridement",
+        "sharp debridement",
+        "selective debridement",
+        "enzymatic debridement",
+        "sharp wound debridement",
+        "selective sharp debridement"
+      ],
+      "ncci_conflicts": [
+        "97602"
+      ],
+      "notes": "Selective debridement, first 20 sq cm or less of total wound surface area, per session.",
+      "code": "97597",
+      "exclude_if_present": [
+        "non-selective",
+        "wet to dry",
+        "plan to"
+      ],
+      "label": "Wound Debridement \u226420 sq cm",
+      "required_context": [
+        "wound"
+      ]
+    },
+    "97602": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "non-selective debridement",
+        "wet to dry dressing",
+        "wet to moist dressing",
+        "autolytic debridement",
+        "larval therapy",
+        "dressing change wound care",
+        "non-selective wound cleaning"
+      ],
+      "ncci_conflicts": [
+        "97597"
+      ],
+      "notes": "Non-selective only. Mutually exclusive with 97597.",
+      "code": "97602",
+      "exclude_if_present": [
+        "sharp",
+        "selective",
+        "plan to"
+      ],
+      "label": "Non-Selective Debridement",
+      "required_context": [
+        "wound",
+        "applied"
+      ]
+    },
+    "97605": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "wound vac",
+        "negative pressure wound therapy",
+        "npwt",
+        "vacuum assisted closure",
+        "vac therapy",
+        "negative pressure dressing change",
+        "wound vac dressing change"
+      ],
+      "ncci_conflicts": [
+        "97606",
+        "97607",
+        "97608"
+      ],
+      "notes": "Non-disposable system \u226450 sq cm. Engine selects 97606 if >50 sq cm noted.",
+      "code": "97605",
+      "exclude_if_present": [
+        "disposable",
+        "plan to",
+        "greater than 50",
+        "more than 50"
+      ],
+      "label": "NPWT Non-Disposable \u226450 sq cm",
+      "required_context": [
+        "wound",
+        "applied",
+        "placed"
+      ]
+    },
+    "97606": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [],
+      "ncci_conflicts": [
+        "97605",
+        "97607",
+        "97608"
+      ],
+      "notes": "Engine-selected when wound documentation indicates >50 sq cm.",
+      "code": "97606",
+      "label": "NPWT Non-Disposable >50 sq cm",
+      "required_context": []
+    },
+    "97607": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "disposable wound vac",
+        "disposable npwt",
+        "pico wound therapy",
+        "disposable negative pressure dressing",
+        "pico dressing change"
+      ],
+      "ncci_conflicts": [
+        "97605",
+        "97606",
+        "97608"
+      ],
+      "code": "97607",
+      "exclude_if_present": [
+        "greater than 50",
+        "more than 50"
+      ],
+      "label": "NPWT Disposable \u226450 sq cm",
+      "required_context": [
+        "wound",
+        "applied",
+        "disposable"
+      ]
+    },
+    "97608": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [],
+      "ncci_conflicts": [
+        "97605",
+        "97606",
+        "97607"
+      ],
+      "notes": "Engine-selected for disposable system >50 sq cm.",
+      "code": "97608",
+      "label": "NPWT Disposable >50 sq cm"
+    },
+    "97610": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "mist therapy",
+        "low frequency ultrasound wound",
+        "non-contact ultrasound debridement",
+        "sonoca therapy",
+        "low frequency ultrasound wound therapy",
+        "mist ultrasound therapy"
+      ],
+      "ncci_conflicts": [],
+      "code": "97610",
+      "exclude_if_present": [
+        "therapeutic ultrasound",
+        "plan to"
+      ],
+      "label": "Low Frequency Non-Contact Ultrasound",
+      "required_context": [
+        "wound",
+        "applied"
+      ]
+    },
+    "97750": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "functional capacity evaluation",
+        "fce",
+        "isokinetic strength test",
+        "grip strength test",
+        "timed up and go",
+        "tug test",
+        "six minute walk test",
+        "6 minute walk test",
+        "berg balance scale",
+        "tinetti assessment",
+        "dynamic gait index",
+        "physical performance test",
+        "functional performance test",
+        "functional performance testing",
+        "strength and balance testing"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Written report REQUIRED. Flag for documentation compliance.",
+      "code": "97750",
+      "exclude_if_present": [
+        "plan to",
+        "will administer",
+        "scheduled"
+      ],
+      "label": "Physical Performance Test / Measurement",
+      "required_context": [
+        "administered",
+        "completed",
+        "tested"
+      ]
+    },
+    "97755": {
+      "disciplines": [
+        "PT",
+        "OT",
+        "SLP"
+      ],
+      "trigger_phrases": [
+        "assistive technology assessment",
+        "aac assessment",
+        "augmentative communication assessment",
+        "adaptive technology evaluation",
+        "environmental modification assessment",
+        "aac device assessment",
+        "seating and positioning assessment",
+        "environmental control assessment"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Written report REQUIRED.",
+      "code": "97755",
+      "exclude_if_present": [
+        "plan to",
+        "will assess",
+        "scheduled"
+      ],
+      "label": "Assistive Technology Assessment",
+      "required_context": [
+        "assessed",
+        "evaluated"
+      ]
+    },
+    "97760": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "orthotic training",
+        "orthosis fitting",
+        "splint training",
+        "brace training",
+        "afo training",
+        "upper extremity orthotic training",
+        "orthotic management",
+        "afo fitting",
+        "brace fitting training"
+      ],
+      "ncci_conflicts": [
+        "97761"
+      ],
+      "notes": "Initial orthotic training. Subsequent visits use 97763.",
+      "code": "97760",
+      "exclude_if_present": [
+        "subsequent",
+        "follow up",
+        "continued orthotic"
+      ],
+      "label": "Orthotic Management - Initial",
+      "required_context": [
+        "trained",
+        "fitted",
+        "initial"
+      ]
+    },
+    "97761": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "prosthetic training",
+        "prosthesis training",
+        "prosthetic limb training",
+        "prosthetic use training",
+        "prosthetic limb fitting training"
+      ],
+      "ncci_conflicts": [
+        "97760"
+      ],
+      "notes": "Initial prosthetic training. Subsequent use 97763.",
+      "code": "97761",
+      "exclude_if_present": [
+        "subsequent",
+        "follow up"
+      ],
+      "label": "Prosthetic Training - Initial",
+      "required_context": [
+        "initial"
+      ]
+    },
+    "97763": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "subsequent orthotic management",
+        "orthotic training follow up",
+        "prosthetic training follow up",
+        "continued orthotic training",
+        "continued prosthetic training",
+        "orthotic follow up training",
+        "prosthetic follow up training"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Subsequent visits only.",
+      "code": "97763",
+      "exclude_if_present": [
+        "initial",
+        "new orthosis",
+        "first fitting"
+      ],
+      "label": "Orthotic / Prosthetic Management - Subsequent",
+      "required_context": [
+        "continued",
+        "follow up"
+      ]
+    },
+    "97799": {
+      "disciplines": [
+        "PT",
+        "OT",
+        "SLP"
+      ],
+      "trigger_phrases": [
+        "unlisted physical medicine service",
+        "unlisted rehab service",
+        "unspecified pm&r procedure",
+        "unlisted rehabilitation procedure"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Requires special report. Manual payor review.",
+      "code": "97799",
+      "exclude_if_present": [],
+      "label": "Unlisted PM&R Service",
+      "required_context": []
+    },
+    "98966": {
+      "disciplines": [
+        "PT",
+        "OT",
+        "SLP"
+      ],
+      "trigger_phrases": [
+        "telephone check-in",
+        "telephone assessment",
+        "phone call with the patient",
+        "called the patient to discuss symptoms",
+        "telephone assessment and management",
+        "phone call assessment",
+        "telephonic assessment"
+      ],
+      "ncci_conflicts": [],
+      "notes": "5-10 min telephone assessment & management by a non-physician QHP. Not billable if it leads to a visit within 24 hrs or originates from one within the previous 7 days. Higher time bands (98967: 11-20 min, 98968: 21-30 min) are engine-selected by documented call duration.",
+      "code": "98966",
+      "exclude_if_present": [
+        "twenty minutes",
+        "20 minutes",
+        "half hour",
+        "30 minutes",
+        "leads to visit",
+        "led to visit"
+      ],
+      "label": "Telephone Assessment & Management - 5-10 min",
+      "required_context": [
+        "called",
+        "discussed"
+      ]
+    },
+    "98967": {
+      "disciplines": [
+        "PT",
+        "OT",
+        "SLP"
+      ],
+      "trigger_phrases": [],
+      "ncci_conflicts": [],
+      "notes": "Engine-selected when documented telephone assessment & management duration is 11-20 min. Do not match from speech directly.",
+      "code": "98967",
+      "label": "Telephone Assessment & Management - 11-20 min"
+    },
+    "98968": {
+      "disciplines": [
+        "PT",
+        "OT",
+        "SLP"
+      ],
+      "trigger_phrases": [],
+      "ncci_conflicts": [],
+      "notes": "Engine-selected when documented telephone assessment & management duration is 21-30 min. Do not match from speech directly.",
+      "code": "98968",
+      "label": "Telephone Assessment & Management - 21-30 min"
+    },
+    "98970": {
+      "disciplines": [
+        "PT",
+        "OT",
+        "SLP"
+      ],
+      "trigger_phrases": [
+        "patient portal message",
+        "online digital check-in",
+        "asynchronous e-visit",
+        "secure messaging assessment",
+        "responded to patient portal message",
+        "patient portal response",
+        "secure message reply to patient"
+      ],
+      "ncci_conflicts": [],
+      "notes": "5-10 cumulative min over 7 days, non-physician QHP online digital assessment & management. Higher bands (98971: 11-20 min, 98972: 21+ min) are engine-selected by cumulative documented time.",
+      "code": "98970",
+      "exclude_if_present": [
+        "20 minutes",
+        "21 minutes",
+        "leads to visit"
+      ],
+      "label": "Online Digital Assessment & Management - 5-10 min",
+      "required_context": [
+        "portal",
+        "message",
+        "digital"
+      ]
+    },
+    "98971": {
+      "disciplines": [
+        "PT",
+        "OT",
+        "SLP"
+      ],
+      "trigger_phrases": [],
+      "ncci_conflicts": [],
+      "notes": "Engine-selected when cumulative documented online digital assessment & management time (7-day window) is 11-20 min. Do not match from speech directly.",
+      "code": "98971",
+      "label": "Online Digital Assessment & Management - 11-20 min"
+    },
+    "98972": {
+      "disciplines": [
+        "PT",
+        "OT",
+        "SLP"
+      ],
+      "trigger_phrases": [],
+      "ncci_conflicts": [],
+      "notes": "Engine-selected when cumulative documented online digital assessment & management time (7-day window) is 21+ min. Do not match from speech directly.",
+      "code": "98972",
+      "label": "Online Digital Assessment & Management - 21+ min"
+    },
+    "98975": {
+      "disciplines": [
+        "PT",
+        "OT",
+        "SLP"
+      ],
+      "trigger_phrases": [
+        "rtm setup",
+        "remote therapeutic monitoring setup",
+        "set up the monitoring device",
+        "educated on the rtm app",
+        "rtm device education",
+        "rtm device orientation",
+        "remote monitoring app setup"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Billed once per episode of care (until treatment goals are met). Requires documented device education.",
+      "code": "98975",
+      "exclude_if_present": [
+        "plan to",
+        "will set up"
+      ],
+      "label": "Remote Therapeutic Monitoring - Initial Setup & Patient Education",
+      "required_context": [
+        "set up",
+        "educated",
+        "trained on device"
+      ]
+    },
+    "98979": {
+      "disciplines": [
+        "PT",
+        "OT",
+        "SLP"
+      ],
+      "trigger_phrases": [
+        "reviewed remote monitoring data",
+        "rtm treatment management",
+        "reviewed rtm data with the patient",
+        "remote monitoring check-in call",
+        "rtm monthly check-in",
+        "remote monitoring phone call"
+      ],
+      "ncci_conflicts": [
+        "98980"
+      ],
+      "notes": "10-19 min/calendar month, requires at least one real-time interactive communication. Mutually exclusive with 98980 \u2014 do not bill both in the same month. 98980 is engine-selected when time reaches 20+ min.",
+      "code": "98979",
+      "exclude_if_present": [
+        "20 minutes",
+        "twenty minutes",
+        "more than 20"
+      ],
+      "label": "RTM Treatment Management - 10-19 min/month",
+      "required_context": [
+        "reviewed",
+        "called",
+        "discussed"
+      ]
+    },
+    "98980": {
+      "disciplines": [
+        "PT",
+        "OT",
+        "SLP"
+      ],
+      "trigger_phrases": [],
+      "ncci_conflicts": [
+        "98979"
+      ],
+      "notes": "Engine-selected when documented RTM treatment management time reaches 20+ minutes/month. Requires at least one real-time interactive communication. Do not match from speech directly.",
+      "code": "98980",
+      "label": "RTM Treatment Management - 20+ min/month"
+    },
+    "G0281": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "unattended electrical stimulation for wound",
+        "e-stim for pressure ulcer",
+        "unattended e-stim for chronic wound",
+        "electrical stimulation for non-healing ulcer",
+        "unattended stim for pressure sore",
+        "e-stim for chronic wound"
+      ],
+      "ncci_conflicts": [
+        "G0283"
+      ],
+      "notes": "Unattended e-stim for chronic Stage III/IV pressure, arterial, diabetic, or venous stasis ulcers not demonstrating healing after 30 days of conventional care.",
+      "code": "G0281",
+      "exclude_if_present": [
+        "attended",
+        "manual electrical stimulation",
+        "plan to"
+      ],
+      "label": "Unattended Electrical Stimulation - Chronic Wound/Pressure Ulcer",
+      "required_context": [
+        "wound",
+        "ulcer"
+      ]
+    },
+    "G0283": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "unattended electrical stimulation",
+        "unattended e-stim",
+        "unattended nmes",
+        "unattended electrical muscle stimulation"
+      ],
+      "ncci_conflicts": [
+        "G0281"
+      ],
+      "notes": "Unattended e-stim for indications other than wound care. Use G0281 if a wound/ulcer indication is documented.",
+      "code": "G0283",
+      "exclude_if_present": [
+        "wound",
+        "ulcer",
+        "attended",
+        "manual",
+        "plan to"
+      ],
+      "label": "Unattended Electrical Stimulation - Non-Wound Indication",
+      "required_context": []
+    },
+    "G0329": {
+      "disciplines": [
+        "PT",
+        "OT"
+      ],
+      "trigger_phrases": [
+        "electromagnetic therapy for wound",
+        "electromagnetic therapy for pressure ulcer",
+        "pulsed electromagnetic field therapy for wound",
+        "pulsed electromagnetic field for pressure sore"
+      ],
+      "ncci_conflicts": [],
+      "notes": "For chronic Stage III/IV pressure, arterial, diabetic, or venous stasis ulcers not demonstrating healing after 30 days of conventional care.",
+      "code": "G0329",
+      "exclude_if_present": [
+        "plan to"
+      ],
+      "label": "Electromagnetic Therapy - Chronic Wound/Pressure Ulcer",
+      "required_context": [
+        "wound",
+        "ulcer"
+      ]
+    },
+    "G0451": {
+      "disciplines": [
+        "PT",
+        "OT",
+        "SLP",
+        "MD"
+      ],
+      "trigger_phrases": [
+        "developmental testing",
+        "developmental screening tool",
+        "standardized developmental assessment",
+        "development test interpretation and report",
+        "standardized development screening"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Per standardized instrument form, with interpretation and report (e.g., ASQ, Bayley).",
+      "code": "G0451",
+      "exclude_if_present": [
+        "plan to",
+        "will administer"
+      ],
+      "label": "Developmental Testing with Interpretation & Report",
+      "required_context": [
+        "administered",
+        "interpreted",
+        "scored"
+      ]
+    },
+    "G0541": {
+      "disciplines": [
+        "PT",
+        "OT",
+        "SLP"
+      ],
+      "trigger_phrases": [
+        "caregiver wound care training",
+        "caregiver positioning training",
+        "decubitus ulcer prevention training",
+        "infection control training for caregiver",
+        "direct care skills training without patient present",
+        "caregiver training for wound care tasks"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Direct/hands-on caregiving skills (e.g. wound care, positioning, infection control) without patient present, face-to-face. Full 30 min required. Distinct from 97550 (therapeutic/behavioral caregiver training).",
+      "code": "G0541",
+      "exclude_if_present": [
+        "patient present",
+        "group",
+        "plan to"
+      ],
+      "label": "Caregiver Direct Care Training (No Patient Present) - Initial 30 min",
+      "required_context": [
+        "caregiver",
+        "family",
+        "without the patient"
+      ]
+    },
+    "G0543": {
+      "disciplines": [
+        "PT",
+        "OT",
+        "SLP"
+      ],
+      "trigger_phrases": [
+        "group caregiver training without patient present",
+        "multi-family direct care training",
+        "multi-caregiver direct care session"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Untimed, billed once per patient represented. Direct care skills training for multiple caregiver sets without patients present.",
+      "code": "G0543",
+      "exclude_if_present": [
+        "individual caregiver",
+        "patient present"
+      ],
+      "label": "Group Caregiver Direct Care Training (No Patient Present)",
+      "required_context": [
+        "group",
+        "multiple",
+        "caregivers"
+      ]
+    },
+    "G2250": {
+      "disciplines": [
+        "PT",
+        "OT",
+        "SLP"
+      ],
+      "trigger_phrases": [
+        "reviewed the video the patient sent",
+        "reviewed patient submitted video",
+        "remote video review",
+        "store and forward video assessment",
+        "asynchronous video review",
+        "async photo review",
+        "patient submitted photo review"
+      ],
+      "ncci_conflicts": [],
+      "notes": "Asynchronous store-and-forward review of patient-submitted video/images. Must follow up with the patient within 24 business hours.",
+      "code": "G2250",
+      "exclude_if_present": [
+        "live video call",
+        "telehealth visit",
+        "real-time",
+        "leads to visit"
+      ],
+      "label": "Remote Assessment of Patient-Submitted Recorded Video/Images",
+      "required_context": [
+        "reviewed",
+        "submitted",
+        "sent a video"
+      ]
+    },
+    "G2251": {
+      "disciplines": [
+        "PT",
+        "OT",
+        "SLP"
+      ],
+      "trigger_phrases": [
+        "virtual check-in",
+        "brief phone check-in",
+        "quick call with the patient",
+        "brief telephone check-in",
+        "brief virtual check in call"
+      ],
+      "ncci_conflicts": [],
+      "notes": "5-10 min brief real-time check-in by a QHP who cannot report E&M services. Overlaps conceptually with 98966 (telephone A&M) \u2014 code choice is often payer-specific; confirm which set applies.",
+      "code": "G2251",
+      "exclude_if_present": [
+        "leads to visit",
+        "scheduled visit within 24 hours",
+        "evaluation"
+      ],
+      "label": "Brief Virtual Check-In - 5-10 min",
+      "required_context": [
+        "called",
+        "checked in"
+      ]
+    }
+  }

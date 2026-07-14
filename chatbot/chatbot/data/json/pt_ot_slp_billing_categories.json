@@ -1,0 +1,392 @@
+{
+  "total_codes": 98,
+  "billing_rule_definitions": {
+    "8_minute_rule": "15-minute timed units; Medicare 8-minute rule pools direct timed minutes across eligible codes on same day",
+    "full_block_required": "Timed code; each unit requires completing the full CPT-defined time block (no partial credit, not 8-minute rule)",
+    "untimed_per_session": "No time-based units; bill once per therapy/treatment session when the service is provided",
+    "untimed_per_encounter": "No time-based units; bill once per patient encounter (evaluation, re-evaluation, or non-E/M encounter service)",
+    "untimed_per_procedure": "No time-based units; bill once each time the defined procedure is performed",
+    "untimed_per_day": "No time-based units; bill once per calendar day",
+    "area_based": "Units based on area (sq cm) or wound size, not time",
+    "time_band_select": "Pick one code based on total time band; not additive units",
+    "untimed_per_episode": "Bill once per episode of care; no time-based units"
+  },
+  "summary": {
+    "8_minute_rule": 24,
+    "full_block_required": 7,
+    "untimed_per_session": 13,
+    "untimed_per_encounter": 9,
+    "untimed_per_procedure": 17,
+    "untimed_per_day": 15,
+    "area_based": 5,
+    "time_band_select": 7,
+    "untimed_per_episode": 1
+  },
+  "categories": [
+    {
+      "category_id": "A",
+      "billing_rule": "8_minute_rule",
+      "description": "15-minute timed units; Medicare 8-minute rule pools direct timed minutes across eligible codes on same day",
+      "segment_size_minutes": 15,
+      "unit_threshold_minutes": 8,
+      "min_time_for_1_unit": "8 minutes (pooled timed minutes)",
+      "max_units_allowed": "Multiple units per day (8-minute rule)",
+      "count": 24,
+      "codes": [
+        "90912",
+        "97032",
+        "97033",
+        "97034",
+        "97035",
+        "97036",
+        "97039",
+        "97110",
+        "97112",
+        "97113",
+        "97116",
+        "97124",
+        "97129",
+        "97140",
+        "97530",
+        "97533",
+        "97535",
+        "97537",
+        "97542",
+        "97750",
+        "97755",
+        "97760",
+        "97761",
+        "97763"
+      ]
+    },
+    {
+      "category_id": "B",
+      "billing_rule": "full_block_required",
+      "description": "Timed code; each unit requires completing the full CPT-defined time block (no partial credit, not 8-minute rule)",
+      "subcategories": [
+        {
+          "subcategory_id": "B1",
+          "billing_rule": "full_block_required",
+          "block_minutes": 10,
+          "min_time_for_1_unit": "Full 10 minutes",
+          "max_units_allowed": "1 per session",
+          "count": 1,
+          "codes": [
+            "98979"
+          ]
+        },
+        {
+          "subcategory_id": "B2",
+          "billing_rule": "full_block_required",
+          "block_minutes": 20,
+          "min_time_for_1_unit": "Full 20 minutes",
+          "max_units_allowed": "1 per session",
+          "count": 1,
+          "codes": [
+            "98980"
+          ]
+        },
+        {
+          "subcategory_id": "B3",
+          "billing_rule": "full_block_required",
+          "block_minutes": 30,
+          "min_time_for_1_unit": "Full 30 minutes",
+          "max_units_allowed": "1 per session",
+          "count": 2,
+          "codes": [
+            "97550",
+            "G0541"
+          ]
+        },
+        {
+          "subcategory_id": "B3a",
+          "billing_rule": "full_block_required",
+          "block_minutes": 30,
+          "min_time_for_1_unit": "Full 30 minutes per unit",
+          "max_units_allowed": "Multiple units (requires 92607)",
+          "count": 1,
+          "codes": [
+            "92608"
+          ]
+        },
+        {
+          "subcategory_id": "B4",
+          "billing_rule": "full_block_required",
+          "block_minutes": 60,
+          "min_time_for_1_unit": "Full 60 minutes (first hour)",
+          "max_units_allowed": "1 per session",
+          "count": 1,
+          "codes": [
+            "92607"
+          ]
+        },
+        {
+          "subcategory_id": "B5",
+          "billing_rule": "full_block_required",
+          "block_minutes": 120,
+          "min_time_for_1_unit": "Full 2 hours",
+          "max_units_allowed": "1 per session",
+          "count": 1,
+          "codes": [
+            "97545"
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "C",
+      "billing_rule": "untimed_per_session",
+      "description": "No time-based units; bill once per therapy/treatment session",
+      "subcategories": [
+        {
+          "subcategory_id": "C1",
+          "billing_rule": "untimed_per_session",
+          "session_type": "treatment_or_group",
+          "min_time_for_1_unit": "None",
+          "max_units_allowed": "1 per session",
+          "count": 13,
+          "codes": [
+            "92507",
+            "92508",
+            "92521",
+            "92522",
+            "92523",
+            "92524",
+            "92526",
+            "92609",
+            "93797",
+            "93798",
+            "97150",
+            "97552",
+            "G0543"
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "I",
+      "billing_rule": "untimed_per_encounter",
+      "description": "No time-based units; bill once per patient encounter",
+      "subcategories": [
+        {
+          "subcategory_id": "I1",
+          "billing_rule": "untimed_per_encounter",
+          "encounter_type": "initial_evaluation",
+          "min_time_for_1_unit": "None",
+          "max_units_allowed": "1 per encounter",
+          "count": 6,
+          "codes": [
+            "97161",
+            "97162",
+            "97163",
+            "97165",
+            "97166",
+            "97167"
+          ]
+        },
+        {
+          "subcategory_id": "I2",
+          "billing_rule": "untimed_per_encounter",
+          "encounter_type": "re_evaluation",
+          "min_time_for_1_unit": "None",
+          "max_units_allowed": "1 per encounter",
+          "count": 2,
+          "codes": [
+            "97164",
+            "97168"
+          ]
+        },
+        {
+          "subcategory_id": "I3",
+          "billing_rule": "untimed_per_encounter",
+          "encounter_type": "remote_non_em",
+          "min_time_for_1_unit": "None",
+          "max_units_allowed": "1 per encounter",
+          "count": 1,
+          "codes": [
+            "G2250"
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "D",
+      "billing_rule": "untimed_per_procedure",
+      "description": "No time-based units; bill once each time the defined procedure is performed",
+      "min_time_for_1_unit": "None",
+      "max_units_allowed": "1 per procedure",
+      "count": 17,
+      "codes": [
+        "92520",
+        "92597",
+        "92610",
+        "92611",
+        "92612",
+        "92614",
+        "92616",
+        "95851",
+        "95852",
+        "96000",
+        "96001",
+        "96002",
+        "96105",
+        "96125",
+        "97139",
+        "97799",
+        "G0451"
+      ]
+    },
+    {
+      "category_id": "E",
+      "billing_rule": "untimed_per_day",
+      "description": "No time-based units; bill once per calendar day",
+      "min_time_for_1_unit": "None",
+      "max_units_allowed": "1 per day",
+      "count": 15,
+      "codes": [
+        "90901",
+        "95992",
+        "97010",
+        "97012",
+        "97016",
+        "97018",
+        "97022",
+        "97024",
+        "97026",
+        "97028",
+        "97602",
+        "97610",
+        "G0281",
+        "G0283",
+        "G0329"
+      ]
+    },
+    {
+      "category_id": "F",
+      "billing_rule": "area_based",
+      "description": "Units based on area (sq cm) or wound size, not time",
+      "subcategories": [
+        {
+          "subcategory_id": "F1",
+          "billing_rule": "area_based",
+          "billing_time": "20 sq cm",
+          "min_time_for_1_unit": "First 20 sq cm debrided",
+          "max_units_allowed": "Yes (per additional 20 sq cm via 97598)",
+          "count": 1,
+          "codes": [
+            "97597"
+          ]
+        },
+        {
+          "subcategory_id": "F2",
+          "billing_rule": "area_based",
+          "billing_time": "50 sq cm per unit",
+          "min_time_for_1_unit": "Each additional 50 sq cm",
+          "max_units_allowed": "Yes",
+          "count": 1,
+          "codes": [
+            "97608"
+          ]
+        },
+        {
+          "subcategory_id": "F3",
+          "billing_rule": "area_based",
+          "billing_time": "per wound (<50 sq cm)",
+          "min_time_for_1_unit": "Per wound site (total wound <50 sq cm)",
+          "max_units_allowed": "1 per wound",
+          "count": 1,
+          "codes": [
+            "97605"
+          ]
+        },
+        {
+          "subcategory_id": "F4",
+          "billing_rule": "area_based",
+          "billing_time": "per wound (<=50 sq cm)",
+          "min_time_for_1_unit": "Per wound (≤50 sq cm, disposable device)",
+          "max_units_allowed": "1 per wound",
+          "count": 1,
+          "codes": [
+            "97607"
+          ]
+        },
+        {
+          "subcategory_id": "F5",
+          "billing_rule": "area_based",
+          "billing_time": "per wound (>=50 sq cm)",
+          "min_time_for_1_unit": "Per wound site (total wound >=50 sq cm)",
+          "max_units_allowed": "1 per wound",
+          "count": 1,
+          "codes": [
+            "97606"
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "G",
+      "billing_rule": "time_band_select",
+      "description": "Pick one code based on total time band; not additive units",
+      "subcategories": [
+        {
+          "subcategory_id": "G1",
+          "billing_rule": "time_band_select",
+          "time_band": "11-20 minutes",
+          "min_time_for_1_unit": "11-20 minutes",
+          "max_units_allowed": "1 (pick one code)",
+          "count": 2,
+          "codes": [
+            "98967",
+            "98971"
+          ]
+        },
+        {
+          "subcategory_id": "G2",
+          "billing_rule": "time_band_select",
+          "time_band": "21+ minutes",
+          "min_time_for_1_unit": "21+ minutes",
+          "max_units_allowed": "1 (pick one code)",
+          "count": 1,
+          "codes": [
+            "98972"
+          ]
+        },
+        {
+          "subcategory_id": "G3",
+          "billing_rule": "time_band_select",
+          "time_band": "21-30 minutes",
+          "min_time_for_1_unit": "21-30 minutes",
+          "max_units_allowed": "1 (pick one code)",
+          "count": 1,
+          "codes": [
+            "98968"
+          ]
+        },
+        {
+          "subcategory_id": "G4",
+          "billing_rule": "time_band_select",
+          "time_band": "5-10 minutes",
+          "min_time_for_1_unit": "5-10 minutes",
+          "max_units_allowed": "1 (pick one code)",
+          "count": 3,
+          "codes": [
+            "98966",
+            "98970",
+            "G2251"
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "H",
+      "billing_rule": "untimed_per_episode",
+      "description": "Bill once per episode of care; no time-based units",
+      "min_time_for_1_unit": "None (initial setup, once per episode)",
+      "max_units_allowed": "1 per episode",
+      "count": 1,
+      "codes": [
+        "98975"
+      ]
+    }
+  ]
+}

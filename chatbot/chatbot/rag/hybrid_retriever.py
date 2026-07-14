@@ -1,29 +1,22 @@
 from langchain_core.documents import Document
 
 from rag.query_router import CodeType, QueryRoute, QueryRouter
-from rag.retrieval_tools import MetadataCodeRetrievalTool, SemanticRetrievalTool
-from rag.vectordb import VectorStore
-
-# Structured JSON tables are served by deterministic billing tools, not embeddings.
-STRUCTURED_JSON_SOURCES = frozenset(
-    {
-        "cpt_knowledge.json",
-        "cpt_general_info.json",
-        "cpt_aoc_info.json",
-        "cpt_mue_info.json",
-        "cpt_ptp_info.json",
-        "cpt_icd10_info.json",
-    }
+from rag.retrieval_tools import (
+    MetadataCodeRetrievalTool,
+    SemanticRetrievalTool,
+    STRUCTURED_JSON_SOURCES,
 )
+from rag.vectordb import VectorStore
 
 # Prefer descriptive knowledge-base sources before large reference tables.
 SOURCE_PRIORITY: dict[str, int] = {
-    "cpt_knowledge.json": 0,
-    "cpt_general_info.json": 1,
-    "cpt_aoc_info.json": 2,
-    "cpt_mue_info.json": 3,
-    "cpt_ptp_info.json": 4,
-    "cpt_icd10_info.json": 5,
+    "pt_ot_slp_billing_categories.json": 0,
+    "medexa_cpt_lookup.json": 1,
+    "cpt_general_info.json": 2,
+    "cpt_aoc_info.json": 3,
+    "cpt_mue_info.json": 4,
+    "cpt_ptp_info.json": 5,
+    "cpt_icd10_info.json": 6,
     "healthcare.pdf": 6,
     "medexa.pdf": 7,
     "Medexa_Physical_Therapy_Knowledge_Base.docx": 8,

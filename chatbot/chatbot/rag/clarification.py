@@ -108,6 +108,34 @@ _INTENTS: tuple[AmbiguousIntent, ...] = (
         ),
         needs_scenario=True,
     ),
+    AmbiguousIntent(
+        name="coding_recommendation",
+        patterns=(
+            r"which cpt should",
+            r"what cpt should",
+            r"which code should",
+            r"what code should i bill",
+            r"recommend a cpt",
+            r"recommend a code",
+            r"what should i bill",
+            r"which should i bill",
+            r"(?:wound|sq\s*cm).*(?:which|what) cpt",
+            r"which cpt.*(?:wound|sq\s*cm|debrid)",
+        ),
+        needs_scenario=True,
+    ),
+    AmbiguousIntent(
+        name="general_billing",
+        patterns=(
+            r"phone call",
+            r"telephone service",
+            r"telephone call",
+            r"telehealth",
+            r"virtual check[\s-]?in",
+            r"can i bill for a \d+[\s-]minute",
+        ),
+        needs_payer=True,
+    ),
 )
 
 
@@ -118,10 +146,13 @@ def _extract_codes(text: str) -> set[str]:
 
 
 def extract_billing_context(
-    question: str, history: list[ChatMessage] | None = None
+    question: str,
+    history: list[ChatMessage] | None = None,
+    *,
+    include_history: bool = True,
 ) -> BillingContext:
     parts = [question]
-    if history:
+    if history and include_history:
         parts.extend(msg.content for msg in history[-6:])
 
     combined = "\n".join(parts)
@@ -161,9 +192,17 @@ def _looks_like_clarification_question(text: str) -> bool:
 
 def _detect_intent(question: str) -> AmbiguousIntent | None:
     lowered = question.lower().strip()
+    if _SPECIFIC_FACTUAL.search(lowered):
+        if re.search(r"\b(?:modifier|mod\.?)\s*[#:-]?\s*([A-Z0-9]{2})\b", lowered) or _extract_codes(question):
+            return None
+
+    priority = ("coding_recommendation", "general_billing", "modifier", "bill_together", "billable", "compliance")
+    for name in priority:
+        intent = next((item for item in _INTENTS if item.name == name), None)
+        if intent and any(re.search(pattern, lowered) for pattern in intent.patterns):
+            return intent
+
     if not lowered.endswith("?"):
-        return None
-    if _SPECIFIC_FACTUAL.search(lowered) and _extract_codes(question):
         return None
     if re.search(r"modifier\s*59", lowered) and not _extract_codes(question):
         return next(i for i in _INTENTS if i.name == "modifier")
@@ -223,6 +262,23 @@ def _build_clarification(intent: AmbiguousIntent, missing: list[str], question: 
             "Could you describe the billing scenario or provide the CPT code(s) involved?"
         )
 
+    if intent.name == "coding_recommendation":
+        return (
+            "I need a little more information before I can recommend the correct billing code.\n\n"
+            "• What procedure or service was performed?\n"
+            "• What clinical details matter for code selection (site, depth, method, duration)?\n"
+            "• Is this Medicare or a commercial payer?"
+        )
+
+    if intent.name == "general_billing":
+        return (
+            "This type of service has its own billing rules, and eligibility depends on "
+            "provider type, payer, and documentation.\n\n"
+            "Could you tell me:\n"
+            "• Are you a PT, OT, or SLP?\n"
+            "• Is this Medicare or commercial insurance?"
+        )
+
     return "Could you share the CPT code(s) and payer so I can answer accurately?"
 
 
@@ -236,19 +292,65 @@ def detect_clarification_intent(question: str) -> AmbiguousIntent | None:
     return _detect_intent(question)
 
 
+def _has_sufficient_coding_context(question: str, context: BillingContext) -> bool:
+    lowered = question.lower()
+    has_procedure_detail = any(
+        re.search(pattern, lowered)
+        for pattern in (
+            r"selective debrid",
+            r"non[\s-]?selective debrid",
+            r"subcutaneous",
+            r"muscle(?:\s+layer)?",
+            r"\bbone\b",
+            r"full[\s-]?thickness",
+            r"partial[\s-]?thickness",
+            r"wound depth",
+        )
+    )
+    return context.has_payer and has_procedure_detail
+
+
 def try_clarification(
-    question: str, history: list[ChatMessage] | None = None
+    question: str,
+    history: list[ChatMessage] | None = None,
+    *,
+    include_history: bool = True,
 ) -> ClarificationRequest | None:
     """
     Return a clarification prompt when the question is too ambiguous to answer safely.
     Uses current question plus recent session history to avoid re-asking for known facts.
     """
+    # Category G owns phone / online / time_band_select billing (JSON is authoritative).
+    from rag.category_tools.time_band import (
+        is_category_g_question,
+        is_phone_online_question,
+        is_time_band_category_question,
+    )
+
+    if is_category_g_question(question) or is_time_band_category_question(question):
+        return None
+    if is_phone_online_question(question):
+        return None
     intent = _detect_intent(question)
     if intent is None:
         return None
 
-    context = extract_billing_context(question, history)
+    context = extract_billing_context(question, history, include_history=include_history)
     missing = _missing_requirements(intent, context, question)
+    if intent.name == "coding_recommendation":
+        if _has_sufficient_coding_context(question, context):
+            return None
+        return ClarificationRequest(
+            message=_build_clarification(intent, missing or ["scenario"], question),
+            intent_name=intent.name,
+        )
+    if intent.name == "general_billing":
+        if context.has_payer:
+            return None
+        return ClarificationRequest(
+            message=_build_clarification(intent, missing or ["payer"], question),
+            intent_name=intent.name,
+        )
     if not missing:
         return None
 
